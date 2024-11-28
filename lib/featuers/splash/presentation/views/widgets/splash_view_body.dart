@@ -42,7 +42,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     return  Center(
           child: _controller.value.isInitialized
               ? AspectRatio(
-                  aspectRatio: 9/18,
+                  aspectRatio: 9/16,
                   child: VideoPlayer(_controller),
                 )
               : Container(),
