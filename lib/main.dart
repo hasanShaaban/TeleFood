@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:telefood/core/utils/app_router.dart';
+import 'package:telefood/core/utils/constant.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,8 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRouter.router,
+      theme: ThemeData(scaffoldBackgroundColor: kScaffoldColor),
     );
   }
 }
