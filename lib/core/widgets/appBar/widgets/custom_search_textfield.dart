@@ -17,7 +17,7 @@ class CustomSearchTextField extends StatelessWidget {
       height: height * .05,
       width: width * .6,
       child: TextField(
-        style: kSearchTextStyle,
+        style: kCandara18Bold,
         scrollPadding: EdgeInsets.zero,
         textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
@@ -31,7 +31,7 @@ class CustomSearchTextField extends StatelessWidget {
           enabledBorder: buildOutLineInputBorder(),
           focusedBorder: buildOutLineInputBorder(),
           hintText: 'Search',
-          hintStyle: kSearchTextStyle.copyWith(color: kSecondaryColor),
+          hintStyle: kCandara18Bold.copyWith(color: kSecondaryColor),
         ),
       ),
     );
