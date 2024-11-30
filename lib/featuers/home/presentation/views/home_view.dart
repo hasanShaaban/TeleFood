@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:telefood/featuers/home/presentation/views/widgets/cart_elevated_button.dart';
 
 import 'package:telefood/featuers/home/presentation/views/widgets/home_view_body.dart';
 
@@ -11,6 +11,10 @@ class HomeView extends StatelessWidget {
     return const SafeArea(
         child: Scaffold(
       body: HomeViewBody(),
+      floatingActionButton:
+          CartElevatedButton(),
     ));
   }
 }
+
+
