@@ -12,3 +12,7 @@ const kSearchTextStyle = TextStyle(
   fontSize: 18,
   fontWeight: FontWeight.bold
 );
+const kMvBoli18 = TextStyle(
+  fontFamily: 'MvBoli',
+  fontSize: 18,
+);
