@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
-import 'package:telefood/core/widgets/appBar/widgets/images_section.dart';
+import 'package:telefood/featuers/auth/presentation/views/widgets/images_section.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/auth_config_text.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/authentication_text_field.dart';
 
