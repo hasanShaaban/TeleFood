@@ -21,20 +21,20 @@ class CustomDropDownButton extends StatelessWidget {
         ],
         color: kSecondaryColor,
         borderRadius: BorderRadius.circular(17),
-        border: Border.all(color: kScaffoldColor, width: 1)
+        border: Border.all(color: kWhiteColor, width: 1)
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton(
           alignment: AlignmentDirectional.centerEnd,
           iconSize: 45,
-          iconEnabledColor: kScaffoldColor,
+          iconEnabledColor: kWhiteColor,
           icon: Padding(
             padding: const EdgeInsets.only(right: 10),
             child: SvgPicture.asset('assets/images/Path 21.svg',),
           ),
           hint: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 11),
-            child: Text(hint,style: kMvBoli18.copyWith(color: kScaffoldColor),),
+            child: Text(hint,style: kMvBoli18.copyWith(color: kWhiteColor),),
           ),
           borderRadius: BorderRadius.circular(17),
             items: locations.map((String items) {
