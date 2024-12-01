@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 
 class CustomAppBarIconButton extends StatelessWidget {
@@ -11,7 +12,11 @@ class CustomAppBarIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         padding: EdgeInsets.zero,
-        onPressed: () {},
+        onPressed: () {
+          if(icon == kBackButton){
+            GoRouter.of(context).pop();
+          }
+        },
         icon: Icon(
           icon,
           color: kSecondaryColor,

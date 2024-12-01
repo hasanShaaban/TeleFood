@@ -6,14 +6,16 @@ import 'package:telefood/core/widgets/appBar/widgets/hideable_appbar_items.dart'
 
 class MainAppBar extends StatelessWidget {
   const MainAppBar({
-    super.key, this.minAppBarHeight,
+    super.key,
+    this.minAppBarHeight,
   });
 
   final double? minAppBarHeight;
   @override
   Widget build(BuildContext context) {
-    
     return SliverAppBar(
+        leading: Icon(null),
+        stretch: true,
         pinned: true,
         expandedHeight: minAppBarHeight ?? 190,
         collapsedHeight: 95,
@@ -25,10 +27,11 @@ class MainAppBar extends StatelessWidget {
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(38),
                 bottomRight: Radius.circular(38))),
-        flexibleSpace: const FlexibleSpaceBar(
-          background:  HideableAppBarItems(),
-          titlePadding:  EdgeInsets.only(
-              top: 27, left: 27, bottom: 25, right: 26),
+        flexibleSpace: FlexibleSpaceBar(
+          background:
+              minAppBarHeight == null ? const HideableAppBarItems() : null,
+          titlePadding:
+              const EdgeInsets.only(top: 27, left: 27, bottom: 25, right: 26),
           expandedTitleScale: 1,
           title: Align(
             alignment: Alignment.center,
@@ -36,11 +39,11 @@ class MainAppBar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                 CustomAppBarIconButton(
-                  icon: Icons.menu,
-                ),
-                CustomSearchTextField(),
-                 CustomAppBarIconButton(
+                minAppBarHeight == null
+                    ? const CustomAppBarIconButton(icon: Icons.menu)
+                    : const CustomAppBarIconButton(icon:kBackButton),
+                const CustomSearchTextField(),
+                const CustomAppBarIconButton(
                     icon: Icons.notifications_none_outlined)
               ],
             ),

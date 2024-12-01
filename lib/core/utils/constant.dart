@@ -25,3 +25,10 @@ const kMvBoli14 = TextStyle(
   fontFamily: 'MvBoli',
   fontSize: 16,
 );
+
+
+
+
+
+//icons
+const kBackButton = Icons.arrow_back;
