@@ -28,7 +28,7 @@ class AuthenticationTextField extends StatelessWidget {
               hintText: hintText,
               enabledBorder: TextFieldBorder(),
               focusedBorder: TextFieldBorder(),
-              fillColor: kScaffoldColor,
+              fillColor: kWhiteColor,
               filled: true),
         ),
       ),

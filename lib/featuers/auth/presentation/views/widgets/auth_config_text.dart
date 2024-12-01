@@ -13,7 +13,7 @@ class AuthenticationConfigText extends StatelessWidget {
       children: [
         Text(
           'You don\'t have an account ?',
-          style: kMvBoli14.copyWith(color: kScaffoldColor),
+          style: kMvBoli14.copyWith(color: kWhiteColor),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
