@@ -27,7 +27,7 @@ class CustomSearchTextField extends StatelessWidget {
           ),
           contentPadding: const EdgeInsets.only(right: 15),
           filled: true,
-          fillColor: kScaffoldColor,
+          fillColor: kWhiteColor,
           enabledBorder: buildOutLineInputBorder(),
           focusedBorder: buildOutLineInputBorder(),
           hintText: 'Search',

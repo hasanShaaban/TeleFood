@@ -20,7 +20,7 @@ class RestaurantCard extends StatelessWidget {
                   spreadRadius: 2,
                   offset: Offset(0, 4))
             ],
-            color: kScaffoldColor),
+            color: kWhiteColor),
         child: const RestaurantCardInfo(),
       ),
     );
