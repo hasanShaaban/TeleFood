@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 
 class LoginButton extends StatelessWidget {
@@ -15,7 +17,9 @@ class LoginButton extends StatelessWidget {
             elevation: 10.3,
             minimumSize: const Size(150, 54),
             backgroundColor: kSecondaryColor),
-        onPressed: () {},
+        onPressed: () {
+          GoRouter.of(context).pushReplacement(AppRouter.kHomeViewRouter);
+        },
         child: const Row(
           mainAxisSize: MainAxisSize.min,
           children: [
