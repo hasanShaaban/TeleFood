@@ -7,18 +7,17 @@ import 'package:telefood/core/widgets/appBar/widgets/hideable_appbar_items.dart'
 class MainAppBar extends StatelessWidget {
   const MainAppBar({
     super.key,
-    required this.height,
-    required this.width,
+    this.minAppBarHeight,
   });
 
-  final double height;
-  final double width;
-
+  final double? minAppBarHeight;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+        leading: Icon(null),
+        stretch: true,
         pinned: true,
-        expandedHeight: 190,
+        expandedHeight: minAppBarHeight ?? 190,
         collapsedHeight: 95,
         backgroundColor: kPrimeryColor,
         elevation: 10,
@@ -29,9 +28,10 @@ class MainAppBar extends StatelessWidget {
                 bottomLeft: Radius.circular(38),
                 bottomRight: Radius.circular(38))),
         flexibleSpace: FlexibleSpaceBar(
-          background: const HideableAppBarItems(),
-          titlePadding: const EdgeInsets.only(
-              top: 27, left: 27, bottom: 25, right: 26),
+          background:
+              minAppBarHeight == null ? const HideableAppBarItems() : null,
+          titlePadding:
+              const EdgeInsets.only(top: 27, left: 27, bottom: 25, right: 26),
           expandedTitleScale: 1,
           title: Align(
             alignment: Alignment.center,
@@ -39,10 +39,10 @@ class MainAppBar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const CustomAppBarIconButton(
-                  icon: Icons.menu,
-                ),
-                CustomSearchTextField(height: height, width: width),
+                minAppBarHeight == null
+                    ? const CustomAppBarIconButton(icon: Icons.menu)
+                    : const CustomAppBarIconButton(icon:kBackButton),
+                const CustomSearchTextField(),
                 const CustomAppBarIconButton(
                     icon: Icons.notifications_none_outlined)
               ],

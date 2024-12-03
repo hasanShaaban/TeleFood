@@ -11,7 +11,6 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
-
   late VideoPlayerController _controller;
 
   @override
@@ -39,13 +38,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return  Center(
-          child: _controller.value.isInitialized
-              ? AspectRatio(
-                  aspectRatio: 9/16,
-                  child: VideoPlayer(_controller),
-                )
-              : Container(),
-        );
+    return Center(
+      child: _controller.value.isInitialized
+          ? AspectRatio(
+              aspectRatio: 9 / 16,
+              child: VideoPlayer(_controller),
+            )
+          : Container(),
+    );
   }
 }
