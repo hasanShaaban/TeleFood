@@ -7,6 +7,7 @@ abstract class AppRouter {
   static const kHomeViewRouter = '/HomeView';
   static const kSearchViewRouter = '/SearchView';
   static const kSignupViewRouter = '/SignupView';
+  static const kConfirmPassWordVewRouter = '/ConfirmPasswordView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -17,8 +18,13 @@ abstract class AppRouter {
         path: kHomeViewRouter,
         builder: (context, state) => const HomeView(),
       ),
-      GoRoute(path: kSignupViewRouter,
-      builder: (context, state) =>  const SingupView(),
+      GoRoute(
+        path: kSignupViewRouter,
+        builder: (context, state) => const SingupView(),
+      ),
+       GoRoute(
+        path: kConfirmPassWordVewRouter,
+        builder: (context, state) => const SplashView(),
       ),
     ],
   );
