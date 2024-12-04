@@ -22,7 +22,7 @@ class AuthenticationTextField extends StatelessWidget {
           textAlignVertical: TextAlignVertical.center,
           keyboardType: keyboard,
           decoration: InputDecoration(
-              contentPadding: EdgeInsets.only(right: 30),
+              contentPadding: const EdgeInsets.only(right: 30),
               hintStyle: kMvBoli20,
               prefixIcon: Icon(icon),
               hintText: hintText,

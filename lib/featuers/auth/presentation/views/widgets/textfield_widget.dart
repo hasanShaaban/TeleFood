@@ -11,13 +11,14 @@ class TextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: padding!, vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: padding!, vertical: 15),
       child: TextField(
         onChanged: (value) {},
         decoration: InputDecoration(
           filled: true,
           fillColor: color!,
           prefixIcon: icon,
+          
           hintText: text,
           hintStyle: kMvBoli18.copyWith(color: Colors.grey),
           contentPadding:

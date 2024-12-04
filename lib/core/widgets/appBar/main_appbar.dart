@@ -14,7 +14,7 @@ class MainAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-        leading: Icon(null),
+        leading: const Icon(null),
         stretch: true,
         pinned: true,
         expandedHeight: minAppBarHeight ?? 190,
