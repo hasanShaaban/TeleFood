@@ -11,7 +11,6 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
-
   late VideoPlayerController _controller;
 
   @override
@@ -32,20 +31,20 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 5), (){
-      GoRouter.of(context).push(AppRouter.kHomeViewRouter);
+    Future.delayed(const Duration(seconds: 5), () {
+      GoRouter.of(context).pushReplacement(AppRouter.kLoginViewRouter);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Center(
-          child: _controller.value.isInitialized
-              ? AspectRatio(
-                  aspectRatio: 9/18,
-                  child: VideoPlayer(_controller),
-                )
-              : Container(),
-        );
+    return Center(
+      child: _controller.value.isInitialized
+          ? AspectRatio(
+              aspectRatio: 9 / 16,
+              child: VideoPlayer(_controller),
+            )
+          : Container(),
+    );
   }
 }

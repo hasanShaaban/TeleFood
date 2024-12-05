@@ -12,9 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
-      theme: ThemeData(scaffoldBackgroundColor: kScaffoldColor),
+      theme: ThemeData(scaffoldBackgroundColor: kWhiteColor, useMaterial3: false),
     );
   }
-}
+} 
