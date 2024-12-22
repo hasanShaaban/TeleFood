@@ -3,8 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 
-class LoginButton extends StatelessWidget {
-  const LoginButton({super.key});
+class NextButtonWiget extends StatelessWidget {
+  const NextButtonWiget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +25,11 @@ class LoginButton extends StatelessWidget {
         child: const Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Login', style: kMvBoli20),
+            Text('Next', style: kMvBoli20),
             SizedBox(
               width: 7,
             ),
-            Icon(Icons.login)
+            Icon(Icons.navigate_next_rounded)
           ],
         ));
   }
