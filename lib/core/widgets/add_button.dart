@@ -8,30 +8,26 @@ class AddButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 178,
-      left: 61,
-      child: Container(
+    return Container(
+      
+      height: 40,
+      width: 40,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
         
-        height: 40,
-        width: 40,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          
-          gradient:const LinearGradient(
-            begin: Alignment.bottomLeft,
-            end: Alignment.topCenter,
-            colors: [
-            kSecondaryColor,
-            kTextColor
-          ])
-        ),
-        child: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.add,
-            color: kWhiteColor,
-          ),
+        gradient:const LinearGradient(
+          begin: Alignment.bottomLeft,
+          end: Alignment.topCenter,
+          colors: [
+          kSecondaryColor,
+          kTextColor
+        ])
+      ),
+      child: IconButton(
+        onPressed: () {},
+        icon: const Icon(
+          Icons.add,
+          color: kWhiteColor,
         ),
       ),
     );

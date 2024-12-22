@@ -18,11 +18,11 @@ class LoginContainer extends StatelessWidget {
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(75),
               bottomRight: Radius.circular(75))),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ImagesSection(),
-          SizedBox(
+          const ImagesSection(),
+          const SizedBox(
             height: 10,
           ),
           AuthenticationTextField(
@@ -30,18 +30,17 @@ class LoginContainer extends StatelessWidget {
             icon: Icons.phone_outlined,
             keyboard: TextInputType.number,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           AuthenticationTextField(
             hintText: 'Password',
             icon: Icons.password,
-            keyboard: TextInputType.text,
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          AuthenticationConfigText()
+          const AuthenticationConfigText(question: 'You don\'t have an account?',respons: 'Signup',)
         ],
       ),
     );

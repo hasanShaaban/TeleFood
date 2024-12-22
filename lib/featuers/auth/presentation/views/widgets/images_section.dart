@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telefood/featuers/auth/presentation/views/widgets/logo_section.dart';
 
 class ImagesSection extends StatelessWidget {
   const ImagesSection({
@@ -10,16 +11,7 @@ class ImagesSection extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: EdgeInsets.fromLTRB(15, 15, 0, 0),
-          child: Image(
-            height: 80,
-            width: 80,
-            image: AssetImage(
-              'assets/images/teleFood_log_min.png',
-            ),
-          ),
-        ),
+        LogoSection(),
         Padding(
           padding: EdgeInsets.fromLTRB(25, 30, 0, 0),
           child: Image(
@@ -33,3 +25,5 @@ class ImagesSection extends StatelessWidget {
     );
   }
 }
+
+
