@@ -3,10 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 
-class NextButtonWiget extends StatelessWidget {
-  const NextButtonWiget({
-    super.key,
-  });
+class SignupButton extends StatelessWidget {
+  const SignupButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +18,16 @@ class NextButtonWiget extends StatelessWidget {
             minimumSize: const Size(150, 54),
             backgroundColor: kSecondaryColor),
         onPressed: () {
-          GoRouter.of(context).push(AppRouter.kSignupConfermmingViewRouter);
+          GoRouter.of(context).pushReplacement(AppRouter.kHomeViewRouter);
         },
         child: const Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Next', style: kMvBoli20),
+            Text('Sign up', style: kMvBoli20),
             SizedBox(
               width: 7,
             ),
-            Icon(Icons.navigate_next_rounded)
+            Icon(Icons.login)
           ],
         ));
   }

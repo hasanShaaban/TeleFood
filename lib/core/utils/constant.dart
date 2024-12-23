@@ -8,8 +8,15 @@ const kTextColor = Color(0xffFDBF50);
 
 //TextStyle
 
-const kCandara18Bold =
-    TextStyle(fontFamily: 'Candara', fontSize: 20, fontWeight: FontWeight.bold);
+const kCandara18Bold = TextStyle(
+  fontFamily: 'Candara',
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+);
+const kCandara20 = TextStyle(
+  fontFamily: 'Candara',
+  fontSize: 20,
+);
 const kMvBoli18 = TextStyle(
   fontFamily: 'MvBoli',
   fontSize: 18,

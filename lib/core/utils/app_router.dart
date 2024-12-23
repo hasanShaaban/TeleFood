@@ -1,6 +1,7 @@
 
 import 'package:go_router/go_router.dart';
 import 'package:telefood/featuers/auth/presentation/views/login_view.dart';
+import 'package:telefood/featuers/auth/presentation/views/signup_confermming_view.dart';
 import 'package:telefood/featuers/auth/presentation/views/signup_view.dart';
 import 'package:telefood/featuers/home/presentation/views/home_view.dart';
 import 'package:telefood/featuers/shop/presentation/views/shop_view.dart';
@@ -11,6 +12,7 @@ abstract class AppRouter {
   static const kSearchViewRouter = '/SearchView';
   static const kLoginViewRouter = '/LoginView';
   static const kSignupViewRouter = '/SignupView';
+  static const kSignupConfermmingViewRouter = '/SignupConfermmingView';
   static const kShopViewRouter = '/ShopView';
   static final router = GoRouter(
     routes: [
@@ -29,6 +31,10 @@ abstract class AppRouter {
       GoRoute(
         path: kSignupViewRouter,
         builder: (context, state) => const SignupView(),
+      ),
+      GoRoute(
+        path: kSignupConfermmingViewRouter,
+        builder: (context, state) => const SignupConfermmingView(),
       ),
       GoRoute(
         path: kShopViewRouter,
