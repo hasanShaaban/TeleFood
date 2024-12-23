@@ -16,4 +16,3 @@ class SignupConfermmingViewBody extends StatelessWidget {
     );
   }
 }
-

@@ -25,21 +25,41 @@ class RestaurantCardInfo extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 16,),
+          const SizedBox(
+            width: 16,
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
-                  Text('Sham Foods', style: kCandara18Bold.copyWith(color: kPrimeryColor),),
+                  Text(
+                    'Sham Foods',
+                    style: kCandara18Bold.copyWith(color: kPrimeryColor),
+                  ),
                   const SizedBox(width: 60),
-                  GestureDetector(onTap: (){} ,child:const Icon(Icons.favorite_border_rounded, size: 18,))
+                  GestureDetector(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.favorite_border_rounded,
+                        size: 18,
+                      ))
                 ],
               ),
-              const RestaurantCardDetails(info: 'Location:', value: 'Damascus',),
-              const RestaurantCardDetails(info: 'Category:', value: 'Fast Food',),
-              const RestaurantCardDetails(info: 'Rate:', value: '4.5',icon: Icons.star_sharp,),
+              const RestaurantCardDetails(
+                info: 'Location:',
+                value: 'Damascus',
+              ),
+              const RestaurantCardDetails(
+                info: 'Category:',
+                value: 'Fast Food',
+              ),
+              const RestaurantCardDetails(
+                info: 'Rate:',
+                value: '4.5',
+                icon: Icons.star_sharp,
+              ),
             ],
           )
         ],

@@ -44,10 +44,13 @@ class ProfileContainer extends StatelessWidget {
                   size: 24,
                 ),
                 const SizedBox(width: 5),
-                Text('UserName',style: kCandara20.copyWith(color: kWhiteColor)),
+                Text('UserName',
+                    style: kCandara20.copyWith(color: kWhiteColor)),
               ],
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -57,7 +60,8 @@ class ProfileContainer extends StatelessWidget {
                   size: 24,
                 ),
                 const SizedBox(width: 5),
-                Text('0911122233',style: kCandara20.copyWith(color: kWhiteColor)),
+                Text('0911122233',
+                    style: kCandara20.copyWith(color: kWhiteColor)),
               ],
             ),
           ],

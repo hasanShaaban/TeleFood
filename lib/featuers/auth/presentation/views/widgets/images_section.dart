@@ -25,5 +25,3 @@ class ImagesSection extends StatelessWidget {
     );
   }
 }
-
-

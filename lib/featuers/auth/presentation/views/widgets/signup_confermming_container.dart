@@ -22,17 +22,16 @@ class SignupConfermmingContainer extends StatelessWidget {
         children: [
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              LogoSection(),
-              BackButton()
-            ],
+            children: [LogoSection(), BackButton()],
           ),
           const SizedBox(height: 130),
-          AuthenticationTextField(hintText: 'Phone Number', icon: Icons.phone_outlined),
+          AuthenticationTextField(
+              hintText: 'Phone Number', icon: Icons.phone_outlined),
           const SizedBox(height: 20),
           AuthenticationTextField(hintText: 'Password', icon: Icons.password),
           const SizedBox(height: 20),
-          AuthenticationTextField(hintText: 'Confirme password', icon: Icons.check),
+          AuthenticationTextField(
+              hintText: 'Confirme password', icon: Icons.check),
         ],
       ),
     );
@@ -46,9 +45,16 @@ class BackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 15),
-      child: IconButton(onPressed: (){
-        GoRouter.of(context).pop();
-      }, icon:const Icon(Icons.arrow_back_sharp, size: 35,), color: kWhiteColor,),
+      child: IconButton(
+        onPressed: () {
+          GoRouter.of(context).pop();
+        },
+        icon: const Icon(
+          Icons.arrow_back_sharp,
+          size: 35,
+        ),
+        color: kWhiteColor,
+      ),
     );
   }
 }

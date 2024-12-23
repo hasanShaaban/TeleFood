@@ -26,7 +26,7 @@ class AuthenticationConfigText extends StatelessWidget {
             onTap: () {
               if (respons == 'Signup') {
                 GoRouter.of(context).push(AppRouter.kSignupViewRouter);
-              }else{
+              } else {
                 GoRouter.of(context).pop();
               }
             },

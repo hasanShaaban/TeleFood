@@ -34,9 +34,13 @@ class ActionsList extends StatelessWidget {
     return const Column(
       children: [
         EditInfoButton(),
-        Divider(thickness: 1.5,),
+        Divider(
+          thickness: 1.5,
+        ),
         FavoriteButton(),
-        Divider(thickness: 1.5,),
+        Divider(
+          thickness: 1.5,
+        ),
       ],
     );
   }
@@ -52,7 +56,20 @@ class EditInfoButton extends StatelessWidget {
     return MaterialButton(
       onPressed: () {},
       child: const Row(
-        children: [Icon(Icons.edit_outlined, size: 24,color: kSecondaryColor,),SizedBox(width: 5,), Text('Change user info',style: kMvBoli20,), ],
+        children: [
+          Icon(
+            Icons.edit_outlined,
+            size: 24,
+            color: kSecondaryColor,
+          ),
+          SizedBox(
+            width: 5,
+          ),
+          Text(
+            'Change user info',
+            style: kMvBoli20,
+          ),
+        ],
       ),
     );
   }
@@ -68,9 +85,21 @@ class FavoriteButton extends StatelessWidget {
     return MaterialButton(
       onPressed: () {},
       child: const Row(
-        children: [Icon(Icons.favorite_outline, size: 24,color: kSecondaryColor,),SizedBox(width: 5,), Text('Favorite',style: kMvBoli20,), ],
+        children: [
+          Icon(
+            Icons.favorite_outline,
+            size: 24,
+            color: kSecondaryColor,
+          ),
+          SizedBox(
+            width: 5,
+          ),
+          Text(
+            'Favorite',
+            style: kMvBoli20,
+          ),
+        ],
       ),
     );
   }
 }
-

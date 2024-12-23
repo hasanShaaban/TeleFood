@@ -7,7 +7,6 @@ import 'package:telefood/featuers/auth/presentation/views/widgets/location_dropd
 import 'package:telefood/featuers/auth/presentation/views/widgets/logo_section.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/photo_profile_widget.dart';
 
-
 class SignupContainer extends StatelessWidget {
   const SignupContainer({super.key});
 
@@ -24,21 +23,21 @@ class SignupContainer extends StatelessWidget {
               bottomRight: Radius.circular(75))),
       child: Column(
         children: [
-          const Align(
-            alignment: Alignment.topLeft,
-            child: LogoSection()),
-          
+          const Align(alignment: Alignment.topLeft, child: LogoSection()),
           const PhotoProfileWidget(),
           const SizedBox(height: 20),
-          AuthenticationTextField(hintText: 'First name', icon: Icons.mode_edit_outline_outlined),
+          AuthenticationTextField(
+              hintText: 'First name', icon: Icons.mode_edit_outline_outlined),
           const SizedBox(height: 20),
-          AuthenticationTextField(hintText: 'Last name', icon: Icons.mode_edit_outline_outlined),
+          AuthenticationTextField(
+              hintText: 'Last name', icon: Icons.mode_edit_outline_outlined),
           const SizedBox(height: 20),
           const LocationDropDownButton(hint: 'Select your location'),
           const SizedBox(height: 20),
           const LocationDetailsTextfield(),
           const SizedBox(height: 20),
-          const AuthenticationConfigText(question: 'You already have an account?',respons: 'Login')
+          const AuthenticationConfigText(
+              question: 'You already have an account?', respons: 'Login')
         ],
       ),
     );

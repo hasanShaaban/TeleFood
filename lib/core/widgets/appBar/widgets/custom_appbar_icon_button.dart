@@ -13,9 +13,9 @@ class CustomAppBarIconButton extends StatelessWidget {
     return IconButton(
         padding: EdgeInsets.zero,
         onPressed: () {
-          if(icon == kBackButton){
+          if (icon == kBackButton) {
             GoRouter.of(context).pop();
-          }else if(icon == Icons.menu){
+          } else if (icon == Icons.menu) {
             Scaffold.of(context).openDrawer();
           }
         },

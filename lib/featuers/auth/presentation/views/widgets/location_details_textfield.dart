@@ -16,13 +16,17 @@ class LocationDetailsTextfield extends StatelessWidget {
           textAlignVertical: TextAlignVertical.center,
           keyboardType: TextInputType.text,
           decoration: InputDecoration(
-              contentPadding:const EdgeInsets.only(right: 30),
+              contentPadding: const EdgeInsets.only(right: 30),
               hintStyle: kMvBoli20,
-              prefixIcon:const Icon(Icons.info_outlined),
+              prefixIcon: const Icon(Icons.info_outlined),
               prefixIconColor: kSecondaryColor,
               hintText: 'Add location details',
-              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
-              focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25), borderSide:const BorderSide(color: kSecondaryColor, width: 2)),
+              enabledBorder:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(25),
+                  borderSide:
+                      const BorderSide(color: kSecondaryColor, width: 2)),
               fillColor: kWhiteColor,
               filled: true),
         ),

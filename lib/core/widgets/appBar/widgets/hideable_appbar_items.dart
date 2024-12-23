@@ -25,8 +25,12 @@ class HideableAppBarItems extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomDropDownButton(hint: 'Location'),
-              SizedBox(width: 70,),
-              CustomDropDownButton(hint: 'Category',)
+              SizedBox(
+                width: 70,
+              ),
+              CustomDropDownButton(
+                hint: 'Category',
+              )
             ],
           ),
         )
@@ -34,5 +38,3 @@ class HideableAppBarItems extends StatelessWidget {
     );
   }
 }
-
-

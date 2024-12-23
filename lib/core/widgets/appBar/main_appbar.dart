@@ -14,8 +14,7 @@ class MainAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      
-        leading:const Icon(null),
+        leading: const Icon(null),
         stretch: true,
         pinned: true,
         expandedHeight: minAppBarHeight ?? 190,
@@ -42,7 +41,7 @@ class MainAppBar extends StatelessWidget {
               children: [
                 minAppBarHeight == null
                     ? const CustomAppBarIconButton(icon: Icons.menu)
-                    : const CustomAppBarIconButton(icon:kBackButton),
+                    : const CustomAppBarIconButton(icon: kBackButton),
                 const CustomSearchTextField(),
                 const CustomAppBarIconButton(
                     icon: Icons.notifications_none_outlined)

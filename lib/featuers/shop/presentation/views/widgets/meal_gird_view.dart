@@ -17,16 +17,18 @@ class MealGridView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('The Menu', style: kMvBoli24.copyWith(color: kPrimeryColor)),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               GridView.builder(
-                padding: EdgeInsets.zero,
-                shrinkWrap: true,
-                physics:const NeverScrollableScrollPhysics(),
-                itemCount: 20,
-                  gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
-                    mainAxisSpacing: 22,
-                    crossAxisSpacing: 22,
-                    childAspectRatio: 17/21,
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 20,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      mainAxisSpacing: 22,
+                      crossAxisSpacing: 22,
+                      childAspectRatio: 17 / 21,
                       crossAxisCount: 2),
                   itemBuilder: (context, index) => const MealCart()),
             ],

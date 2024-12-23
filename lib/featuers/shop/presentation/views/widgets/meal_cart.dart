@@ -36,18 +36,20 @@ class MealInfo extends StatelessWidget {
                 offset: Offset(0, 5))
           ]),
       child: Column(
-        
         children: [
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 15
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: AspectRatio(
                 aspectRatio: 12 / 9,
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Image(image: AssetImage('assets/images/crispy.jpg'), fit: BoxFit.fill,))),
+                    child: Image(
+                      image: AssetImage('assets/images/crispy.jpg'),
+                      fit: BoxFit.fill,
+                    ))),
           )
         ],
       ),

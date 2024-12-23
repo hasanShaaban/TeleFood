@@ -24,13 +24,17 @@ class AuthenticationTextField extends StatelessWidget {
           textAlignVertical: TextAlignVertical.center,
           keyboardType: keyboard,
           decoration: InputDecoration(
-              contentPadding:const EdgeInsets.only(right: 30),
+              contentPadding: const EdgeInsets.only(right: 30),
               hintStyle: kMvBoli20,
               prefixIcon: Icon(icon),
               prefixIconColor: kSecondaryColor,
               hintText: hintText,
-              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
-              focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25), borderSide:const BorderSide(color: kSecondaryColor, width: 2)),
+              enabledBorder:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(25),
+                  borderSide:
+                      const BorderSide(color: kSecondaryColor, width: 2)),
               fillColor: kWhiteColor,
               filled: true),
         ),

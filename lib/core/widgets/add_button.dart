@@ -9,20 +9,14 @@ class AddButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       height: 40,
       width: 40,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        
-        gradient:const LinearGradient(
-          begin: Alignment.bottomLeft,
-          end: Alignment.topCenter,
-          colors: [
-          kSecondaryColor,
-          kTextColor
-        ])
-      ),
+          borderRadius: BorderRadius.circular(20),
+          gradient: const LinearGradient(
+              begin: Alignment.bottomLeft,
+              end: Alignment.topCenter,
+              colors: [kSecondaryColor, kTextColor])),
       child: IconButton(
         onPressed: () {},
         icon: const Icon(

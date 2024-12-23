@@ -43,10 +43,7 @@ class PhotoProfileWidget extends StatelessWidget {
             ),
           ),
         ),
-        const Positioned(
-          top: 100,
-          left: 120,
-          child: AddButton())
+        const Positioned(top: 100, left: 120, child: AddButton())
       ],
     );
   }

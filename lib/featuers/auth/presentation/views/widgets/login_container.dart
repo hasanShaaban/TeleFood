@@ -40,7 +40,10 @@ class LoginContainer extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const AuthenticationConfigText(question: 'You don\'t have an account?',respons: 'Signup',)
+          const AuthenticationConfigText(
+            question: 'You don\'t have an account?',
+            respons: 'Signup',
+          )
         ],
       ),
     );

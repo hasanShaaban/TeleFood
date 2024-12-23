@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/featuers/splash/presentation/views/widgets/splash_view_body.dart';
@@ -14,4 +13,3 @@ class SplashView extends StatelessWidget {
     );
   }
 }
-
