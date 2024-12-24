@@ -1,6 +1,6 @@
 class LoginModel {
-  final String phoneNumber;
-  final String passowrd;
+  String phoneNumber;
+  String passowrd;
 
   LoginModel({required this.phoneNumber, required this.passowrd});
 }

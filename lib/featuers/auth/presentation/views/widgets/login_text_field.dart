@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/featuers/auth/data/models/login_model.dart';
 
 // ignore: must_be_immutable
-class AuthenticationTextField extends StatelessWidget {
-  AuthenticationTextField({
+class LoginTextField extends StatelessWidget {
+  LoginTextField({
     super.key,
     required this.hintText,
     required this.icon,
     this.keyboard = TextInputType.text,
+    //  required this.loginModel,
   });
+  // final LoginModel loginModel;
   final String hintText;
   final IconData icon;
   TextInputType keyboard;
@@ -19,6 +22,14 @@ class AuthenticationTextField extends StatelessWidget {
       child: SizedBox(
         height: 50,
         child: TextField(
+          onSubmitted: (value) {
+            // if(hintText == 'Phone number'){
+            //   loginModel.phoneNumber = value;
+            // }
+            // if(hintText == 'Password'){
+            //   loginModel.passowrd = value;
+            // }
+          },
           cursorColor: kSecondaryColor,
           scrollPadding: EdgeInsets.zero,
           textAlignVertical: TextAlignVertical.center,

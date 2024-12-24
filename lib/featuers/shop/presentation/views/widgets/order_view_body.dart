@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:telefood/core/utils/constant.dart';
-
 import 'package:telefood/core/widgets/appBar/main_appbar.dart';
 import 'package:telefood/featuers/shop/presentation/views/widgets/description_section.dart';
 import 'package:telefood/featuers/shop/presentation/views/widgets/image_section.dart';
+import 'package:telefood/featuers/shop/presentation/views/widgets/submit_button.dart';
+import 'package:telefood/featuers/shop/presentation/views/widgets/total_price_section.dart';
+import 'package:telefood/featuers/shop/presentation/views/widgets/user_order_info.dart';
 
 class OrderViewBody extends StatelessWidget {
   const OrderViewBody({super.key});
@@ -11,6 +12,7 @@ class OrderViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: [
         MainAppBar(minAppBarHeight: 95),
         SliverToBoxAdapter(
@@ -18,8 +20,21 @@ class OrderViewBody extends StatelessWidget {
             children: [
               ImageSection(),
               DescriptionSection(),
-              Divider(),
-              UserOrderInfo()
+              Divider(
+                thickness: 2,
+                indent: 55,
+                endIndent: 55,
+              ),
+              UserOrderInfo(),
+              Divider(
+                thickness: 2,
+                indent: 55,
+                endIndent: 55,
+              ),
+              TotalPriceSection(),
+              SizedBox(height: 10),
+              SubmitButton(),
+              SizedBox(height: 10),
             ],
           ),
         )
@@ -28,20 +43,5 @@ class OrderViewBody extends StatelessWidget {
   }
 }
 
-class UserOrderInfo extends StatelessWidget {
-  const UserOrderInfo({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Your order :',
-              style: kCandara18Bold.copyWith(color: kTextColor)),
-        ],
-      ),
-    );
-  }
-}
+

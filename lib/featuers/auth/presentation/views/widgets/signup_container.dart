@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/auth_config_text.dart';
-import 'package:telefood/featuers/auth/presentation/views/widgets/authentication_text_field.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/location_details_textfield.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/location_dropdown_button.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/logo_section.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/photo_profile_widget.dart';
+import 'package:telefood/featuers/auth/presentation/views/widgets/signup_text_field%20copy.dart';
 
 class SignupContainer extends StatelessWidget {
   const SignupContainer({super.key});
@@ -26,10 +26,10 @@ class SignupContainer extends StatelessWidget {
           const Align(alignment: Alignment.topLeft, child: LogoSection()),
           const PhotoProfileWidget(),
           const SizedBox(height: 20),
-          AuthenticationTextField(
+          SignupTextField(
               hintText: 'First name', icon: Icons.mode_edit_outline_outlined),
           const SizedBox(height: 20),
-          AuthenticationTextField(
+          SignupTextField(
               hintText: 'Last name', icon: Icons.mode_edit_outline_outlined),
           const SizedBox(height: 20),
           const LocationDropDownButton(hint: 'Select your location'),
