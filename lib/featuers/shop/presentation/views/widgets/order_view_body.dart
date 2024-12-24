@@ -15,7 +15,12 @@ class OrderViewBody extends StatelessWidget {
         MainAppBar(minAppBarHeight: 95),
         SliverToBoxAdapter(
           child: Column(
-            children: [ImageSection(), DescriptionSection(), Divider(), UserOrderInfo()],
+            children: [
+              ImageSection(),
+              DescriptionSection(),
+              Divider(),
+              UserOrderInfo()
+            ],
           ),
         )
       ],
@@ -34,11 +39,9 @@ class UserOrderInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Your order :',
-                  style: kCandara18Bold.copyWith(color: kTextColor)),
+              style: kCandara18Bold.copyWith(color: kTextColor)),
         ],
       ),
     );
   }
 }
-
-

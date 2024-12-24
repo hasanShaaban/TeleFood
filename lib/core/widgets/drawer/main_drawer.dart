@@ -23,7 +23,7 @@ class MainDrawer extends StatelessWidget {
           ]),
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.end,
-        children: [ProfileContainer(), ActionsList(),Spacer() ,LogoutButton()],
+        children: [ProfileContainer(), ActionsList(), Spacer(), LogoutButton()],
       ),
     );
   }

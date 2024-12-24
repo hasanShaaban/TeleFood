@@ -12,7 +12,8 @@ class MealInfo extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('price: 60 000', style: kMvBoli14.copyWith(color: kPrimeryColor)),
+            Text('price: 60 000',
+                style: kMvBoli14.copyWith(color: kPrimeryColor)),
             Text('S.P', style: kMvBoli14.copyWith(color: kTextColor))
           ],
         )

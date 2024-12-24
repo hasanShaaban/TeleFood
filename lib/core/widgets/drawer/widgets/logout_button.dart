@@ -7,17 +7,16 @@ class LogoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      
-      padding:const EdgeInsets.only(right: 20, bottom: 20),
+      padding: const EdgeInsets.only(right: 20, bottom: 20),
       child: SizedBox(
         width: 115,
         child: ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
-              backgroundColor:const WidgetStatePropertyAll(kPrimeryColor),
-              foregroundColor:const WidgetStatePropertyAll(kWhiteColor),
-              shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)))
-            ),
+                backgroundColor: const WidgetStatePropertyAll(kPrimeryColor),
+                foregroundColor: const WidgetStatePropertyAll(kWhiteColor),
+                shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(22)))),
             child: const Row(
               children: [
                 Text('Logout', style: kMvBoli18),

@@ -11,7 +11,7 @@ class MealCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouter.kOrderViewRouter);
       },
       child: Container(
@@ -25,17 +25,11 @@ class MealCard extends StatelessWidget {
                   blurRadius: 6,
                   offset: Offset(0, 5))
             ]),
-        child:const Column(
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            MealImage(),
-            MealInfo()
-          ],
+          children: [MealImage(), MealInfo()],
         ),
       ),
     );
   }
 }
-
-
-

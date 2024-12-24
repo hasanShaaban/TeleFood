@@ -33,7 +33,8 @@ class DescriptionSection extends StatelessWidget {
           const SizedBox(height: 8),
           Row(
             children: [
-              Text('Single price: 60 000', style: kMvBoli24.copyWith(color: kPrimeryColor)),
+              Text('Single price: 60 000',
+                  style: kMvBoli24.copyWith(color: kPrimeryColor)),
               Text('S.P', style: kMvBoli24.copyWith(color: kTextColor))
             ],
           )

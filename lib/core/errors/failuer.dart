@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 
 abstract class Failuer {
@@ -41,10 +40,9 @@ class ServerFailuer extends Failuer {
       return ServerFailuer('You request not found, Please try again later');
     } else if (statusCode == 500) {
       return ServerFailuer('Internet Server error, please try again later');
-    }else if(statusCode == 403){
+    } else if (statusCode == 403) {
       return ServerFailuer('Internet Server error, pleas try again later');
-    }
-    else {
+    } else {
       return ServerFailuer('There was an error, please try again');
     }
   }

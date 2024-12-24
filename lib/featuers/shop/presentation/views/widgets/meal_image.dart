@@ -13,7 +13,7 @@ class MealImage extends StatelessWidget {
           aspectRatio: 12 / 9,
           child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child:const Image(
+              child: const Image(
                 image: AssetImage('assets/images/crispy.jpg'),
                 fit: BoxFit.fill,
               ))),
