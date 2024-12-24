@@ -33,6 +33,10 @@ const kMvBoli24 = TextStyle(
   fontFamily: 'MvBoli',
   fontSize: 24,
 );
+const kMvBoli30 = TextStyle(
+  fontFamily: 'MvBoli',
+  fontSize: 34,
+);
 const kMvBoli20WithShadow = TextStyle(
     fontFamily: 'MvBoli',
     fontSize: 20,

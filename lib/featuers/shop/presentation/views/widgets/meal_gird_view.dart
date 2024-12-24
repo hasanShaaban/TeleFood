@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
-import 'package:telefood/featuers/shop/presentation/views/widgets/meal_cart.dart';
+import 'package:telefood/featuers/shop/presentation/views/widgets/meal_card.dart';
 
 class MealGridView extends StatelessWidget {
   const MealGridView({
@@ -28,9 +28,9 @@ class MealGridView extends StatelessWidget {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       mainAxisSpacing: 22,
                       crossAxisSpacing: 22,
-                      childAspectRatio: 17 / 21,
+                      childAspectRatio: 17 / 20,
                       crossAxisCount: 2),
-                  itemBuilder: (context, index) => const MealCart()),
+                  itemBuilder: (context, index) => const MealCard()),
             ],
           ),
         ),
