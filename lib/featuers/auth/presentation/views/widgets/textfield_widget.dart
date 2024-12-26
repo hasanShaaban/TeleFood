@@ -3,10 +3,10 @@ import 'package:telefood/core/utils/constant.dart';
 
 // ignore: must_be_immutable
 class TextFieldWidget extends StatelessWidget {
-  TextFieldWidget({super.key, this.icon, this.text, this.color, this.padding});
+  TextFieldWidget({super.key, this.icon, this.text,  this.padding});
   Icon? icon;
   String? text;
-  Color? color;
+  
   double? padding;
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class TextFieldWidget extends StatelessWidget {
         onChanged: (value) {},
         decoration: InputDecoration(
           filled: true,
-          fillColor: color!,
+          fillColor: kWhiteColor,
           prefixIcon: icon,
           
           hintText: text,

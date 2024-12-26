@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/app_router.dart';
@@ -40,20 +39,16 @@ class SignupBody extends StatelessWidget {
                 icon: const Icon(Icons.edit),
                 text: 'First Name',
                 padding: 40,
-                color: kWhiteColor,
               ),
               TextFieldWidget(
                 icon: const Icon(Icons.edit),
                 text: 'Last Name',
                 padding: 40,
-                color: kWhiteColor,
               ),
               const DropdownSignup(),
-             
               TextFieldWidget(
                 text: 'Add location details',
                 padding: 74,
-                color: kWhiteColor,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -66,8 +61,8 @@ class SignupBody extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      GoRouter.of(context).pushReplacement(
-                          AppRouter.kGoLoginFromSignupViewRouter);
+                      GoRouter.of(context)
+                          .pushReplacement(AppRouter.kLoginViewRouter);
                     },
                     child: Text(
                       'login',
@@ -85,7 +80,11 @@ class SignupBody extends StatelessWidget {
         const SizedBox(
           height: 21,
         ),
-        const NextButtonWiget()
+        const NextButtonWiget(
+          text: 'Next',
+         
+
+        )
       ],
     );
   }

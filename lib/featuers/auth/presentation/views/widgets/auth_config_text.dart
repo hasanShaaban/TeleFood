@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 
 class AuthenticationConfigText extends StatelessWidget {
@@ -18,7 +20,9 @@ class AuthenticationConfigText extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).pushReplacement(AppRouter.kSignupViewRouter);
+            },
             child: Text(
               'Signup',
               style: kMvBoli14.copyWith(color: kSecondaryColor),
