@@ -1,7 +1,11 @@
+
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:telefood/core/utils/app_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
+import 'package:telefood/core/providers/login_info_provider.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/featuers/auth/data/models/login_model.dart';
+import 'package:telefood/featuers/auth/presentation/manager/login_cubit/login_cubit.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
@@ -18,7 +22,15 @@ class LoginButton extends StatelessWidget {
             minimumSize: const Size(150, 54),
             backgroundColor: kSecondaryColor),
         onPressed: () {
-          GoRouter.of(context).pushReplacement(AppRouter.kHomeViewRouter);
+          LoginModel loginModel = LoginModel(
+            phoneNumber: Provider.of<LoginInfoProvider>(context, listen: false)
+                .phoneNumber
+                .toString(),
+            passowrd: Provider.of<LoginInfoProvider>(context, listen: false)
+                .passowrd
+                .toString(),
+          );
+          BlocProvider.of<LoginCubit>(context).loginRequest(loginModel);
         },
         child: const Row(
           mainAxisSize: MainAxisSize.min,

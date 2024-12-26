@@ -34,8 +34,13 @@ class ServerFailuer extends Failuer {
   }
 
   factory ServerFailuer.fromResponse(int statusCode, dynamic reponse) {
-    if (statusCode == 400 || statusCode == 401) {
-      return ServerFailuer(reponse['message']['mobile'][0]);
+    if (statusCode == 400) {
+      if(reponse['message'] is Map<String, dynamic>){
+        return ServerFailuer(reponse['message']['mobile'][0]);
+      }
+      return ServerFailuer(reponse['message']);
+    } else if (statusCode == 401) {
+      return ServerFailuer(reponse['message']);
     } else if (statusCode == 404) {
       return ServerFailuer('You request not found, Please try again later');
     } else if (statusCode == 500) {

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
-import 'package:telefood/featuers/auth/data/models/login_model.dart';
+import 'package:telefood/featuers/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/images_section.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/auth_config_text.dart';
+import 'package:telefood/featuers/auth/presentation/views/widgets/login_password_field.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/login_text_field.dart';
 
 class LoginContainer extends StatelessWidget {
-  const LoginContainer({super.key,
-  //  required this.loginModel
-  });
-  // final LoginModel loginModel;
+  LoginContainer({super.key, this.state});
+  LoginFailuer? state;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -29,6 +28,7 @@ class LoginContainer extends StatelessWidget {
             height: 10,
           ),
           LoginTextField(
+            state: state,
             hintText: 'Phone number',
             icon: Icons.phone_outlined,
             keyboard: TextInputType.number,
@@ -36,7 +36,8 @@ class LoginContainer extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          LoginTextField(
+          LoginPasswordField(
+            state: state,
             hintText: 'Password',
             icon: Icons.password,
           ),
@@ -51,4 +52,7 @@ class LoginContainer extends StatelessWidget {
       ),
     );
   }
-}
+
+ 
+  }
+

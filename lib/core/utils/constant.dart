@@ -17,6 +17,11 @@ const kCandara20 = TextStyle(
   fontFamily: 'Candara',
   fontSize: 20,
 );
+const kCandara10 = TextStyle(
+  fontFamily: 'Candara',
+  fontSize: 10,
+  color: Colors.red,
+);
 const kMvBoli18 = TextStyle(
   fontFamily: 'MvBoli',
   fontSize: 18,

@@ -20,7 +20,7 @@ class AuthRepoImple implements AuthRepo {
   Future<Either<Failuer, LoginResponse>> loginRequest({required LoginModel loginModel}) async{
 
     try{
-      var data = await apiService.post(endPoints: 'api/login?mobile=${loginModel.phoneNumber}&password=${loginModel.passowrd}');
+      var data = await apiService.post(endPoints: 'login?', loginModel: loginModel);
       LoginResponse response = LoginResponse.fromJson(data);
       return right(response);
     }catch(e){
