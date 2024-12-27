@@ -62,7 +62,4 @@ class LoginPasswordField extends StatelessWidget {
     );
   }
 
-  // ignore: non_constant_identifier_names
-  OutlineInputBorder TextFieldBorder() =>
-      OutlineInputBorder(borderRadius: BorderRadius.circular(25));
 }

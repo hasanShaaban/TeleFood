@@ -35,7 +35,7 @@ class ServerFailuer extends Failuer {
 
   factory ServerFailuer.fromResponse(int statusCode, dynamic reponse) {
     if (statusCode == 400) {
-      if(reponse['message'] is Map<String, dynamic>){
+      if (reponse['message'] is Map<String, dynamic>) {
         return ServerFailuer(reponse['message']['mobile'][0]);
       }
       return ServerFailuer(reponse['message']);

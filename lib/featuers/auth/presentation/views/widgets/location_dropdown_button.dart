@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+import 'package:telefood/core/providers/signup_info_provider.dart';
 import 'package:telefood/core/utils/constant.dart';
 
-class LocationDropDownButton extends StatelessWidget {
+class LocationDropDownButton extends StatefulWidget {
   const LocationDropDownButton({
     super.key,
     required this.hint,
   });
   final String hint;
+
+  @override
+  State<LocationDropDownButton> createState() => _LocationDropDownButtonState();
+}
+
+class _LocationDropDownButtonState extends State<LocationDropDownButton> {
+  String? value;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
       width: 260,
       decoration: BoxDecoration(
         color: kSecondaryColor,
@@ -19,6 +28,7 @@ class LocationDropDownButton extends StatelessWidget {
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton(
+            value: value,
             alignment: AlignmentDirectional.centerEnd,
             iconSize: 45,
             iconEnabledColor: kWhiteColor,
@@ -31,7 +41,7 @@ class LocationDropDownButton extends StatelessWidget {
             hint: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 11),
               child: Text(
-                hint,
+                widget.hint,
                 style: kMvBoli18.copyWith(color: kWhiteColor),
               ),
             ),
@@ -39,7 +49,15 @@ class LocationDropDownButton extends StatelessWidget {
             items: locations.map((String items) {
               return DropdownMenuItem(value: items, child: Text(items));
             }).toList(),
-            onChanged: (String? location) {}),
+            onChanged: (String? location) {
+              context
+                  .read<SignupInfoProvider>()
+                  .setLocation(newLocation: location.toString());
+
+              setState(() {
+                value = location;
+              });
+            }),
       ),
     );
   }

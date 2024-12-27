@@ -20,10 +20,8 @@ class LoginViewBody extends StatelessWidget {
           GoRouter.of(context).pushReplacement(AppRouter.kHomeViewRouter);
         } else if (state is LoginLoading) {
         } else if (state is LoginFailuer) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(
-                backgroundColor: Colors.red,
-                content: Text(state.errorMessage)));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              backgroundColor: Colors.red, content: Text(state.errorMessage)));
         }
       },
       builder: (context, state) {
@@ -35,16 +33,19 @@ class LoginViewBody extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  LoginContainer(state: state is LoginFailuer ? state : null ),
+                  LoginContainer(state: state is LoginFailuer ? state : null),
                   const SizedBox(
                     height: 60,
                   ),
-                   const LoginButton(),
+                  const LoginButton(),
                 ],
               ),
             ),
           ),
-          Center(child: (state is LoginLoading) ? const CircularProgressIndicator() : null)
+          Center(
+              child: (state is LoginLoading)
+                  ? const CircularProgressIndicator()
+                  : null)
         ]);
       },
     );

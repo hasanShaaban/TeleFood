@@ -1,11 +1,33 @@
-import 'package:flutter/material.dart';
-import 'package:telefood/core/utils/constant.dart';
-import 'package:telefood/core/widgets/add_button.dart';
+import 'dart:io';
 
-class PhotoProfileWidget extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
+import 'package:telefood/core/providers/signup_info_provider.dart';
+import 'package:telefood/core/utils/constant.dart';
+
+class PhotoProfileWidget extends StatefulWidget {
   const PhotoProfileWidget({
     super.key,
   });
+
+  @override
+  State<PhotoProfileWidget> createState() => _PhotoProfileWidgetState();
+}
+
+class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
+
+  File? _selectedImage;
+  final ImagePicker _picker = ImagePicker(); 
+
+  Future<void> pickImageFromGallery() async {
+    final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        _selectedImage = File(pickedFile.path);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +56,14 @@ class PhotoProfileWidget extends StatelessWidget {
               ),
             ),
             child: Center(
-              child: Text(
+              child: _selectedImage != null
+                ? Image.file(
+                    _selectedImage!,
+                    width: 140,
+                    height: 140,
+                    fit: BoxFit.cover,
+                  )
+                : Text(
                 'upload your\n profile image',
                 style: kMvBoli18.copyWith(
                     height: 1.5, color: kWhiteColor, fontSize: 16),
@@ -43,7 +72,29 @@ class PhotoProfileWidget extends StatelessWidget {
             ),
           ),
         ),
-        const Positioned(top: 100, left: 120, child: AddButton())
+        Positioned(
+            top: 100,
+            left: 120,
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: const LinearGradient(
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topCenter,
+                      colors: [kSecondaryColor, kTextColor])),
+              child: IconButton(
+                onPressed: (){
+                  pickImageFromGallery();
+                  Provider.of<SignupInfoProvider>(context).setImage(newImage: _selectedImage);
+                },
+                icon: const Icon(
+                  Icons.add,
+                  color: kWhiteColor,
+                ),
+              ),
+            ))
       ],
     );
   }

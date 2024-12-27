@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/logo_section.dart';
-import 'package:telefood/featuers/auth/presentation/views/widgets/signup_text_field%20copy.dart';
+import 'package:telefood/featuers/auth/presentation/views/widgets/signup_text_field.dart';
 
 class SignupConfermmingContainer extends StatelessWidget {
   const SignupConfermmingContainer({super.key});
@@ -25,13 +25,11 @@ class SignupConfermmingContainer extends StatelessWidget {
             children: [LogoSection(), BackButton()],
           ),
           const SizedBox(height: 130),
-          SignupTextField(
-              hintText: 'Phone Number', icon: Icons.phone_outlined),
+          SignupTextField(hintText: 'Phone Number', icon: Icons.phone_outlined),
           const SizedBox(height: 20),
           SignupTextField(hintText: 'Password', icon: Icons.password),
           const SizedBox(height: 20),
-          SignupTextField(
-              hintText: 'Confirme password', icon: Icons.check),
+          SignupTextField(hintText: 'Confirme password', icon: Icons.check),
         ],
       ),
     );

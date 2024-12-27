@@ -5,7 +5,7 @@ import 'package:telefood/featuers/auth/presentation/views/widgets/location_detai
 import 'package:telefood/featuers/auth/presentation/views/widgets/location_dropdown_button.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/logo_section.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/photo_profile_widget.dart';
-import 'package:telefood/featuers/auth/presentation/views/widgets/signup_text_field%20copy.dart';
+import 'package:telefood/featuers/auth/presentation/views/widgets/signup_text_field.dart';
 
 class SignupContainer extends StatelessWidget {
   const SignupContainer({super.key});

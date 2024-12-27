@@ -6,6 +6,7 @@ import 'package:telefood/featuers/auth/presentation/views/widgets/auth_config_te
 import 'package:telefood/featuers/auth/presentation/views/widgets/login_password_field.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/login_text_field.dart';
 
+// ignore: must_be_immutable
 class LoginContainer extends StatelessWidget {
   LoginContainer({super.key, this.state});
   LoginFailuer? state;

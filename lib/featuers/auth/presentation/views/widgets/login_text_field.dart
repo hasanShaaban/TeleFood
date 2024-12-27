@@ -34,12 +34,12 @@ class LoginTextField extends StatelessWidget {
           textAlignVertical: TextAlignVertical.center,
           keyboardType: keyboard,
           decoration: InputDecoration(
-              errorText: state != null ?
-                      state!.errorMessage == 'the mobile field is required. '
-                  ? state!.errorMessage
-                  : null:null,
+              errorText: state != null
+                  ? state!.errorMessage == 'the mobile field is required. '
+                      ? state!.errorMessage
+                      : null
+                  : null,
               errorStyle: kCandara10,
-              
               contentPadding: const EdgeInsets.only(right: 30),
               hintStyle: kMvBoli20,
               prefixIcon: Icon(icon),
@@ -53,12 +53,10 @@ class LoginTextField extends StatelessWidget {
                       const BorderSide(color: kSecondaryColor, width: 2)),
               errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
-                  borderSide:
-                      const BorderSide(color: Colors.red, width: 2)),
+                  borderSide: const BorderSide(color: Colors.red, width: 2)),
               focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
-                  borderSide:
-                      const BorderSide(color: Colors.red, width: 2)),
+                  borderSide: const BorderSide(color: Colors.red, width: 2)),
               fillColor: kWhiteColor,
               filled: true),
         ),

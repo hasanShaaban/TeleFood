@@ -1,18 +1,22 @@
+import 'dart:io';
+
 class RegistrationModel {
-  final String firstName;
-  final String lastName;
-  final String image;
-  final String mobile;
-  final String passowrd;
-  final String location;
-  final String locationDetails;
+  String? firstName;
+  String? lastName;
+  File? image;
+  String? mobile;
+  String? passowrd;
+  String? confirmPassowrd;
+  String? location;
+  String? locationDetails;
 
   RegistrationModel(
-      {required this.firstName,
-      required this.lastName,
-      required this.image,
-      required this.mobile,
-      required this.passowrd,
-      required this.location,
-      required this.locationDetails});
+      {this.firstName,
+      this.lastName,
+      this.image,
+      this.mobile,
+      this.passowrd,
+      this.confirmPassowrd,
+      this.location,
+      this.locationDetails});
 }
