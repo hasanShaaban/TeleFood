@@ -10,7 +10,6 @@ class NextButtonWiget extends StatelessWidget {
   const NextButtonWiget({
     super.key,
     required this.text,
-
   });
 
   @override
@@ -25,13 +24,11 @@ class NextButtonWiget extends StatelessWidget {
         },
         minWidth: 191,
         height: 54,
-        
-          child: Text(
-            text,
-            style: kMvBoli18.copyWith(color: kWhiteColor, fontSize: 20),
-          ),
+        child: Text(
+          text,
+          style: kMvBoli18.copyWith(color: kWhiteColor, fontSize: 20),
         ),
-      );
-    
+      ),
+    );
   }
 }

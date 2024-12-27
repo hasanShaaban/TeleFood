@@ -45,7 +45,10 @@ class SignupBody extends StatelessWidget {
                 text: 'Last Name',
                 padding: 40,
               ),
-              const DropdownSignup(),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: DropdownSignup(),
+              ),
               TextFieldWidget(
                 text: 'Add location details',
                 padding: 74,
@@ -82,8 +85,7 @@ class SignupBody extends StatelessWidget {
         ),
         const NextButtonWiget(
           text: 'Next',
-         
-
+        
         )
       ],
     );

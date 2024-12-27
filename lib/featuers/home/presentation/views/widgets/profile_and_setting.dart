@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/featuers/home/presentation/views/widgets/logout_botton.dart';
 
@@ -30,7 +32,9 @@ class ProfileAndSetting extends StatelessWidget {
             color: Colors.white,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).pushReplacement(AppRouter.kEditMyProfile);
+            },
             child: buildRow(Icons.edit, 'change user ifo'),
           ),
           InkWell(onTap: () {}, child: buildRow(Icons.favorite, 'favorite')),

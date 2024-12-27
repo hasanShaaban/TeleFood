@@ -55,9 +55,9 @@ class AccounInfoView extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const NextButtonWiget(
+             const NextButtonWiget(
               text: 'Sign up',
-           
+             
             ),
           ],
         ),

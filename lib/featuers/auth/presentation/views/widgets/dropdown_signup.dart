@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
 
 class DropdownSignup extends StatefulWidget {
-  
-  const DropdownSignup({super.key, });
+  const DropdownSignup({
+    super.key,
+  });
 
   @override
   State<DropdownSignup> createState() => _DropdownSignupState();
@@ -14,7 +15,7 @@ class _DropdownSignupState extends State<DropdownSignup> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10),
         decoration: const BoxDecoration(

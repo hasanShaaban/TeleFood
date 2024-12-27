@@ -43,26 +43,28 @@ class PhotoProfileWidget extends StatelessWidget {
           ),
         ),
         Container(
-            margin: const EdgeInsets.fromLTRB(117, 115, 6, 8),
-            width: 37,
-            height: 37,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              // color: kSecondaryColor,
-              gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    kSecondaryColor,
-                    kTextColor,
-                  ]),
+          margin: const EdgeInsets.fromLTRB(117, 115, 6, 8),
+          width: 37,
+          height: 37,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            // color: kSecondaryColor,
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  kSecondaryColor,
+                  kTextColor,
+                ]),
+          ),
+          child: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.add,
+              color: kWhiteColor,
             ),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.add,
-                  color: kWhiteColor,
-                ))),
+          ),
+        ),
       ],
     );
   }
