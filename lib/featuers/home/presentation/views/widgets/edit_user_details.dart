@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/dropdown_signup.dart';
-import 'package:telefood/featuers/auth/presentation/views/widgets/next_button_widget.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/textfield_widget.dart';
 import 'package:telefood/featuers/home/presentation/views/widgets/row_edit_my_profile.dart';
 import 'package:telefood/featuers/home/presentation/views/widgets/submit_button.dart';
