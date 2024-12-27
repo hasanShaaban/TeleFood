@@ -6,6 +6,7 @@ import 'package:telefood/featuers/auth/presentation/views/widgets/dropdown_signu
 import 'package:telefood/featuers/auth/presentation/views/widgets/next_button_widget.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/textfield_widget.dart';
 import 'package:telefood/featuers/home/presentation/views/widgets/row_edit_my_profile.dart';
+import 'package:telefood/featuers/home/presentation/views/widgets/submit_button.dart';
 
 class EditUserDetails extends StatelessWidget {
   const EditUserDetails({
@@ -48,7 +49,7 @@ class EditUserDetails extends StatelessWidget {
             height: 30,
           ),
           const Center(
-              child: NextButtonWiget(
+              child: SubmitButton(
             text: 'Submit',
           )),
         ],
