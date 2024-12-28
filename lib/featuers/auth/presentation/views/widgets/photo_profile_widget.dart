@@ -57,12 +57,10 @@ class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
             ),
             child: Center(
               child: _selectedImage != null
-                ? Image.file(
-                    _selectedImage!,
-                    width: 140,
-                    height: 140,
-                    fit: BoxFit.cover,
-                  )
+                ? CircleAvatar(
+                  radius: 70,
+                  backgroundImage: FileImage(_selectedImage!)
+                )
                 : Text(
                 'upload your\n profile image',
                 style: kMvBoli18.copyWith(
@@ -85,9 +83,9 @@ class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
                       end: Alignment.topCenter,
                       colors: [kSecondaryColor, kTextColor])),
               child: IconButton(
-                onPressed: (){
-                  pickImageFromGallery();
-                  Provider.of<SignupInfoProvider>(context).setImage(newImage: _selectedImage);
+                onPressed: ()async{
+                  await pickImageFromGallery();
+                  Provider.of<SignupInfoProvider>(context, listen: false).setImage(newImage: _selectedImage);
                 },
                 icon: const Icon(
                   Icons.add,

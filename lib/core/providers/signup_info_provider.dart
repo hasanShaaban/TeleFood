@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class SignupInfoProvider extends ChangeNotifier {
   String? firstName;
   String? lastName;
-File? image;
+  File? image;
   String? mobile;
   String? passowrd;
   String? confirmPassowrd;
@@ -13,18 +13,21 @@ File? image;
   String? locationDetails;
 
   SignupInfoProvider();
-void setFirstName({required String newfirstName}) async {
+  void setFirstName({required String newfirstName}) async {
     firstName = newfirstName;
     notifyListeners();
   }
+
   void setLastName({required String newlastName}) async {
     lastName = newlastName;
     notifyListeners();
   }
-void setImage({File? newImage}) async {
+
+  void setImage({File? newImage}) async {
     image = newImage;
     notifyListeners();
   }
+
   void setMobile({required String newMobile}) async {
     mobile = newMobile;
     notifyListeners();
@@ -34,16 +37,19 @@ void setImage({File? newImage}) async {
     passowrd = newPassword;
     notifyListeners();
   }
+
   void setConfirmPassword({required String newConfrimPassword}) async {
-    passowrd = newConfrimPassword;
+    confirmPassowrd = newConfrimPassword;
     notifyListeners();
   }
+
   void setLocation({required String newLocation}) async {
-    passowrd = newLocation;
+    location = newLocation;
     notifyListeners();
   }
+
   void setLocationDetails({required String newLocationDetails}) async {
-    passowrd = newLocationDetails;
+    locationDetails = newLocationDetails;
     notifyListeners();
   }
 }

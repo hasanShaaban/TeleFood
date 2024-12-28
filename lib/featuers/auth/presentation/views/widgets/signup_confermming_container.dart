@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/featuers/auth/presentation/manager/login_cubit/login_cubit.dart';
+import 'package:telefood/featuers/auth/presentation/manager/signup_cubit/signup_cubit.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/logo_section.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/signup_text_field.dart';
 
+// ignore: must_be_immutable
 class SignupConfermmingContainer extends StatelessWidget {
-  const SignupConfermmingContainer({super.key});
-
+  SignupConfermmingContainer({super.key, this.state});
+  SignupFailuer? state;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -25,11 +28,11 @@ class SignupConfermmingContainer extends StatelessWidget {
             children: [LogoSection(), BackButton()],
           ),
           const SizedBox(height: 130),
-          SignupTextField(hintText: 'Phone Number', icon: Icons.phone_outlined),
+          SignupTextField(hintText: 'Phone Number', icon: Icons.phone_outlined, state: state,), 
           const SizedBox(height: 20),
-          SignupTextField(hintText: 'Password', icon: Icons.password),
+          SignupTextField(hintText: 'Password', icon: Icons.password, state: state,),
           const SizedBox(height: 20),
-          SignupTextField(hintText: 'Confirme password', icon: Icons.check),
+          SignupTextField(hintText: 'Confirme password', icon: Icons.check, state: state,),
         ],
       ),
     );

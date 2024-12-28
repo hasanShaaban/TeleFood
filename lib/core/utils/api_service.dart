@@ -25,7 +25,7 @@ class ApiService {
       'last_name': registrationModel.lastName,
       'location': registrationModel.location,
       'mobile': registrationModel.mobile,
-      'password': registrationModel,
+      'password': registrationModel.passowrd,
       'confirm_password': registrationModel.confirmPassowrd,
       'location_details': registrationModel.locationDetails,
       'image':await MultipartFile.fromFile(registrationModel.image!.path)

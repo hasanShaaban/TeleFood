@@ -7,8 +7,10 @@ import 'package:telefood/featuers/auth/presentation/views/widgets/logo_section.d
 import 'package:telefood/featuers/auth/presentation/views/widgets/photo_profile_widget.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/signup_text_field.dart';
 
+// ignore: must_be_immutable
 class SignupContainer extends StatelessWidget {
   const SignupContainer({super.key});
+
 
   @override
   Widget build(BuildContext context) {

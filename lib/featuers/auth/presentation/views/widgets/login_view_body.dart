@@ -18,8 +18,7 @@ class LoginViewBody extends StatelessWidget {
       listener: (context, state) {
         if (state is LoginSuccess) {
           GoRouter.of(context).pushReplacement(AppRouter.kHomeViewRouter);
-        } else if (state is LoginLoading) {
-        } else if (state is LoginFailuer) {
+        }else if (state is LoginFailuer) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               backgroundColor: Colors.red, content: Text(state.errorMessage)));
         }

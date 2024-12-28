@@ -20,3 +20,5 @@ class RegistrationModel {
       this.location,
       this.locationDetails});
 }
+
+

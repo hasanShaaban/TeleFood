@@ -29,7 +29,7 @@ class _LocationDropDownButtonState extends State<LocationDropDownButton> {
       child: DropdownButtonHideUnderline(
         child: DropdownButton(
             value: value,
-            alignment: AlignmentDirectional.centerEnd,
+            alignment: AlignmentDirectional.center,
             iconSize: 45,
             iconEnabledColor: kWhiteColor,
             icon: Padding(
@@ -50,11 +50,9 @@ class _LocationDropDownButtonState extends State<LocationDropDownButton> {
               return DropdownMenuItem(value: items, child: Text(items));
             }).toList(),
             onChanged: (String? location) {
-              context
-                  .read<SignupInfoProvider>()
-                  .setLocation(newLocation: location.toString());
-
+              
               setState(() {
+                Provider.of<SignupInfoProvider>(context, listen: false).setLocation(newLocation: location.toString());
                 value = location;
               });
             }),

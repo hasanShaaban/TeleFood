@@ -7,11 +7,11 @@ class LocationDetailsTextfield extends StatefulWidget {
   const LocationDetailsTextfield({super.key});
 
   @override
-  State<LocationDetailsTextfield> createState() => _LocationDetailsTextfieldState();
+  State<LocationDetailsTextfield> createState() =>
+      _LocationDetailsTextfieldState();
 }
 
 class _LocationDetailsTextfieldState extends State<LocationDetailsTextfield> {
-
   String? error;
   @override
   Widget build(BuildContext context) {
@@ -21,22 +21,18 @@ class _LocationDetailsTextfieldState extends State<LocationDetailsTextfield> {
         height: 50,
         child: TextField(
           onChanged: (String? value) {
-            if(value == null){
-              setState(() {
-                error = 'this field is required';
-              });
-            }
-            else{
-              context.read<SignupInfoProvider>().setLocationDetails(newLocationDetails: value.toString());
-            }
-
+            context
+                .read<SignupInfoProvider>()
+                .setLocationDetails(newLocationDetails: value.toString());
           },
           cursorColor: kSecondaryColor,
           scrollPadding: EdgeInsets.zero,
           textAlignVertical: TextAlignVertical.center,
           keyboardType: TextInputType.text,
           decoration: InputDecoration(
-            error: error != null ? Text(error.toString(), style: kCandara10) : null,
+              error: error != null
+                  ? Text(error.toString(), style: kCandara10)
+                  : null,
               contentPadding: const EdgeInsets.only(right: 30),
               hintStyle: kMvBoli20,
               prefixIcon: const Icon(Icons.info_outlined),
