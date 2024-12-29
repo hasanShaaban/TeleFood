@@ -16,12 +16,12 @@ class PhotoProfileWidget extends StatefulWidget {
 }
 
 class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
-
   File? _selectedImage;
-  final ImagePicker _picker = ImagePicker(); 
+  final ImagePicker _picker = ImagePicker();
 
   Future<void> pickImageFromGallery() async {
-    final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    final XFile? pickedFile =
+        await _picker.pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       setState(() {
         _selectedImage = File(pickedFile.path);
@@ -57,16 +57,14 @@ class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
             ),
             child: Center(
               child: _selectedImage != null
-                ? CircleAvatar(
-                  radius: 70,
-                  backgroundImage: FileImage(_selectedImage!)
-                )
-                : Text(
-                'upload your\n profile image',
-                style: kMvBoli18.copyWith(
-                    height: 1.5, color: kWhiteColor, fontSize: 16),
-                textAlign: TextAlign.center,
-              ),
+                  ? CircleAvatar(
+                      radius: 70, backgroundImage: FileImage(_selectedImage!))
+                  : Text(
+                      'upload your\n profile image',
+                      style: kMvBoli18.copyWith(
+                          height: 1.5, color: kWhiteColor, fontSize: 16),
+                      textAlign: TextAlign.center,
+                    ),
             ),
           ),
         ),
@@ -83,9 +81,10 @@ class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
                       end: Alignment.topCenter,
                       colors: [kSecondaryColor, kTextColor])),
               child: IconButton(
-                onPressed: ()async{
+                onPressed: () async {
                   await pickImageFromGallery();
-                  Provider.of<SignupInfoProvider>(context, listen: false).setImage(newImage: _selectedImage);
+                  Provider.of<SignupInfoProvider>(context, listen: false)
+                      .setImage(newImage: _selectedImage);
                 },
                 icon: const Icon(
                   Icons.add,

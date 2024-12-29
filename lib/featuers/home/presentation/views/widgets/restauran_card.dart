@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/featuers/home/data/models/store_model/datum.dart';
 import 'package:telefood/featuers/home/presentation/views/widgets/restaurant_card_info.dart';
 
 class RestaurantCard extends StatelessWidget {
-  const RestaurantCard({super.key});
+  const RestaurantCard({super.key, required this.data});
 
+  final Datum? data;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -27,7 +29,7 @@ class RestaurantCard extends StatelessWidget {
                     offset: Offset(0, 4))
               ],
               color: kWhiteColor),
-          child: const RestaurantCardInfo(),
+          child: data != null ? RestaurantCardInfo(data: data!):null,
         ),
       ),
     );

@@ -8,6 +8,7 @@ sealed class SignupState extends Equatable {
 }
 
 final class SignupInitial extends SignupState {}
+
 final class SignupLoading extends SignupState {}
 
 final class SignupFailuer extends SignupState {
@@ -16,7 +17,7 @@ final class SignupFailuer extends SignupState {
 }
 
 final class SignupSuccess extends SignupState {
-  final  RegistrationResponse response;
+  final RegistrationResponse response;
 
   const SignupSuccess(this.response);
 }

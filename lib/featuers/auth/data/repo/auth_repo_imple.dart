@@ -13,10 +13,11 @@ class AuthRepoImple implements AuthRepo {
   AuthRepoImple({required this.apiService});
 
   @override
-  Future<Either<Failuer, RegistrationResponse>> signupRequest({required RegistrationModel registrationModel}) async{
+  Future<Either<Failuer, RegistrationResponse>> signupRequest(
+      {required RegistrationModel registrationModel}) async {
     try {
-      var data =
-          await apiService.postSignUp(endPoints: 'register?', registrationModel: registrationModel);
+      var data = await apiService.postSignUp(
+          endPoints: 'register?', registrationModel: registrationModel);
       RegistrationResponse response = RegistrationResponse.fromJson(data);
       return right(response);
     } catch (e) {
@@ -31,8 +32,8 @@ class AuthRepoImple implements AuthRepo {
   Future<Either<Failuer, LoginResponse>> loginRequest(
       {required LoginModel loginModel}) async {
     try {
-      var data =
-          await apiService.postLogin(endPoints: 'login?', loginModel: loginModel);
+      var data = await apiService.postLogin(
+          endPoints: 'login?', loginModel: loginModel);
       LoginResponse response = LoginResponse.fromJson(data);
       return right(response);
     } catch (e) {

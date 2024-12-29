@@ -28,11 +28,23 @@ class SignupConfermmingContainer extends StatelessWidget {
             children: [LogoSection(), BackButton()],
           ),
           const SizedBox(height: 130),
-          SignupTextField(hintText: 'Phone Number', icon: Icons.phone_outlined, state: state,), 
+          SignupTextField(
+            hintText: 'Phone Number',
+            icon: Icons.phone_outlined,
+            state: state,
+          ),
           const SizedBox(height: 20),
-          SignupTextField(hintText: 'Password', icon: Icons.password, state: state,),
+          SignupTextField(
+            hintText: 'Password',
+            icon: Icons.password,
+            state: state,
+          ),
           const SizedBox(height: 20),
-          SignupTextField(hintText: 'Confirme password', icon: Icons.check, state: state,),
+          SignupTextField(
+            hintText: 'Confirme password',
+            icon: Icons.check,
+            state: state,
+          ),
         ],
       ),
     );

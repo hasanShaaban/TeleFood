@@ -53,7 +53,4 @@ class LoginContainer extends StatelessWidget {
       ),
     );
   }
-
- 
-  }
-
+}

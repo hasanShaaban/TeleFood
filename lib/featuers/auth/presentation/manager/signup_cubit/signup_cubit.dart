@@ -1,4 +1,3 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telefood/featuers/auth/data/models/registration_model.dart';
@@ -13,7 +12,8 @@ class SignupCubit extends Cubit<SignupState> {
   final AuthRepo authRepo;
   Future<void> signupRequest(RegistrationModel registrationModel) async {
     emit(SignupLoading());
-    var result = await authRepo.signupRequest(registrationModel: registrationModel);
+    var result =
+        await authRepo.signupRequest(registrationModel: registrationModel);
 
     result.fold((failuer) {
       emit(SignupFailuer(failuer.errorMessage));

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/featuers/home/data/models/store_model/datum.dart';
 import 'package:telefood/featuers/home/presentation/views/widgets/restaurant_card_details.dart';
 
 class RestaurantCardInfo extends StatelessWidget {
   const RestaurantCardInfo({
+    required this.data,
     super.key,
   });
+
+  final Datum data;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +23,9 @@ class RestaurantCardInfo extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.all(color: kPrimeryColor, width: 2),
               borderRadius: BorderRadius.circular(10),
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/images/Rest.jpg'),
+                image: NetworkImage(data.imageUrl!),
               ),
             ),
           ),
@@ -35,7 +39,7 @@ class RestaurantCardInfo extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    'Sham Foods',
+                    data.name!,
                     style: kCandara18Bold.copyWith(color: kPrimeryColor),
                   ),
                   const SizedBox(width: 60),
@@ -47,17 +51,17 @@ class RestaurantCardInfo extends StatelessWidget {
                       ))
                 ],
               ),
-              const RestaurantCardDetails(
+              RestaurantCardDetails(
                 info: 'Location:',
-                value: 'Damascus',
+                value: data.locations![0].governorate!,
               ),
               const RestaurantCardDetails(
                 info: 'Category:',
-                value: 'Fast Food',
+                value: 'fast food',
               ),
-              const RestaurantCardDetails(
+              RestaurantCardDetails(
                 info: 'Rate:',
-                value: '4.5',
+                value: '${data.rate}',
                 icon: Icons.star_sharp,
               ),
             ],

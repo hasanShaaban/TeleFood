@@ -50,9 +50,9 @@ class _LocationDropDownButtonState extends State<LocationDropDownButton> {
               return DropdownMenuItem(value: items, child: Text(items));
             }).toList(),
             onChanged: (String? location) {
-              
               setState(() {
-                Provider.of<SignupInfoProvider>(context, listen: false).setLocation(newLocation: location.toString());
+                Provider.of<SignupInfoProvider>(context, listen: false)
+                    .setLocation(newLocation: location.toString());
                 value = location;
               });
             }),

@@ -35,10 +35,9 @@ class NextButtonWiget extends StatelessWidget {
               ),
               backgroundColor: kPrimeryColor,
             ));
-          }else{
+          } else {
             GoRouter.of(context).push(AppRouter.kSignupConfermmingViewRouter);
           }
-          
         },
         child: const Row(
           mainAxisSize: MainAxisSize.min,

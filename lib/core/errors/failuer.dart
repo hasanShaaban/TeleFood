@@ -36,11 +36,11 @@ class ServerFailuer extends Failuer {
   factory ServerFailuer.fromResponse(int statusCode, dynamic reponse) {
     if (statusCode == 400) {
       if (reponse['message'] is Map<String, dynamic>) {
-        if(reponse['message']['confirm_password'] != null){
+        if (reponse['message']['confirm_password'] != null) {
           return ServerFailuer(reponse['message']['confirm_password'][0]);
-        }else if(reponse['message']['mobile'] != null){
+        } else if (reponse['message']['mobile'] != null) {
           return ServerFailuer(reponse['message']['mobile'][0]);
-        }else if(reponse['message']['password'] != null){
+        } else if (reponse['message']['password'] != null) {
           return ServerFailuer(reponse['message']['password'][0]);
         }
       }

@@ -37,4 +37,9 @@ class ApiService {
         data: formData);
     return response.data;
   }
+
+  Future<Map<String, dynamic>> get({required String endPoints})async{
+    var response = await _dio.get('$_baseURL$endPoints');
+    return response.data;
+  }
 }

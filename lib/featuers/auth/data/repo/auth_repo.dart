@@ -6,7 +6,8 @@ import 'package:telefood/featuers/auth/data/models/registration_model.dart';
 import 'package:telefood/featuers/auth/data/models/registration_response.dart';
 
 abstract class AuthRepo {
-  Future<Either<Failuer, RegistrationResponse>> signupRequest({required RegistrationModel registrationModel});
+  Future<Either<Failuer, RegistrationResponse>> signupRequest(
+      {required RegistrationModel registrationModel});
   Future<Either<Failuer, LoginResponse>> loginRequest(
       {required LoginModel loginModel});
 }
