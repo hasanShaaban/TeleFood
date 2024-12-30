@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 import 'location.dart';
 
-class Datum extends Equatable {
+class StoreData extends Equatable {
   final int? storeId;
   final String? name;
   final String? description;
@@ -10,7 +10,7 @@ class Datum extends Equatable {
   final String? imageUrl;
   final List<Location>? locations;
 
-  const Datum({
+  const StoreData({
     this.storeId,
     this.name,
     this.description,
@@ -19,7 +19,7 @@ class Datum extends Equatable {
     this.locations,
   });
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory StoreData.fromJson(Map<String, dynamic> json) => StoreData(
         storeId: json['store_id'] as int?,
         name: json['name'] as String?,
         description: json['description'] as String?,

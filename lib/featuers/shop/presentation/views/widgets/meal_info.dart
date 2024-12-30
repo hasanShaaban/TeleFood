@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
-import 'package:telefood/featuers/shop/data/models/products_model/datum.dart';
+import 'package:telefood/featuers/shop/data/models/products_model/products_data.dart';
 
 class MealInfo extends StatelessWidget {
   const MealInfo({super.key, required this.data});
 
-  final Datum data;
+  final ProductsData data;
 
   @override
   Widget build(BuildContext context) {

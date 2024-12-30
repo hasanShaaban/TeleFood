@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/featuers/shop/data/models/products_model/products_data.dart';
 
 class DescriptionSection extends StatelessWidget {
-  const DescriptionSection({super.key});
+  const DescriptionSection({super.key, required this.data});
+
+  final ProductsData data;
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +28,15 @@ class DescriptionSection extends StatelessWidget {
                   ))
             ],
           ),
-          Text('Crispy', style: kMvBoli30.copyWith(color: kSecondaryColor)),
+          Text(data.productName!, style: kMvBoli30.copyWith(color: kSecondaryColor)),
           Text(
-            '6 Crispy fried chicken slices with a French fries, sweat and hot sauce boxes, with Russian salad',
+            data.description!,
             style: kMvBoli14.copyWith(color: kPrimeryColor),
           ),
           const SizedBox(height: 8),
           Row(
             children: [
-              Text('Single price: 60 000',
+              Text('Single price: ${data.price}',
                   style: kMvBoli24.copyWith(color: kPrimeryColor)),
               Text('S.P', style: kMvBoli24.copyWith(color: kTextColor))
             ],

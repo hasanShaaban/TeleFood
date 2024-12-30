@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 
-class Datum extends Equatable {
+class ProductsData extends Equatable {
   final int? productId;
   final String? productName;
   final String? description;
   final String? price;
   final String? imgeUrl;
 
-  const Datum({
+  const ProductsData({
     this.productId,
     this.productName,
     this.description,
@@ -15,7 +15,7 @@ class Datum extends Equatable {
     this.imgeUrl,
   });
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory ProductsData.fromJson(Map<String, dynamic> json) => ProductsData(
         productId: json['product_id'] as int?,
         productName: json['product_name'] as String?,
         description: json['description'] as String?,

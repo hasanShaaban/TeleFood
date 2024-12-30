@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ImageSection extends StatelessWidget {
-  const ImageSection({super.key});
+  const ImageSection({super.key, required this.urlImage});
+
+  final String urlImage;
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +17,10 @@ class ImageSection extends StatelessWidget {
             offset: Offset(0, 7)),
       ]),
       child: Image(
-        image: const AssetImage('assets/images/crispy.jpg'),
+        image: NetworkImage(urlImage),
         width: double.infinity,
         height: height * (27 / 90),
-        fit: BoxFit.fill,
+        fit: BoxFit.cover,
       ),
     );
   }

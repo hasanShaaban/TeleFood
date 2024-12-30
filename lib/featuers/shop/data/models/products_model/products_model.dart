@@ -1,15 +1,15 @@
 import 'package:equatable/equatable.dart';
 
-import 'datum.dart';
+import 'products_data.dart';
 
 class ProductsModel extends Equatable {
-  final List<Datum>? data;
+  final List<ProductsData>? data;
 
   const ProductsModel({this.data});
 
   factory ProductsModel.fromJson(Map<String, dynamic> json) => ProductsModel(
         data: (json['data'] as List<dynamic>?)
-            ?.map((e) => Datum.fromJson(e as Map<String, dynamic>))
+            ?.map((e) => ProductsData.fromJson(e as Map<String, dynamic>))
             .toList(),
       );
 

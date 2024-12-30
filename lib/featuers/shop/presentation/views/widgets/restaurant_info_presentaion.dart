@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
-import 'package:telefood/featuers/home/data/models/store_model/datum.dart';
+import 'package:telefood/featuers/home/data/models/store_model/store_data.dart';
 
 class RstaurantInfoPresentaion extends StatelessWidget {
   const RstaurantInfoPresentaion({
     super.key,
     required this.data,
   });
-  final Datum data;
+  final StoreData data;
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(

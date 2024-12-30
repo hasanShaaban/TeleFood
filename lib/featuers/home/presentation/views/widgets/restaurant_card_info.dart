@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
-import 'package:telefood/featuers/home/data/models/store_model/datum.dart';
+import 'package:telefood/featuers/home/data/models/store_model/store_data.dart';
 import 'package:telefood/featuers/home/presentation/views/widgets/restaurant_card_details.dart';
 
 class RestaurantCardInfo extends StatelessWidget {
@@ -9,7 +9,7 @@ class RestaurantCardInfo extends StatelessWidget {
     super.key,
   });
 
-  final Datum data;
+  final StoreData data;
 
   @override
   Widget build(BuildContext context) {
@@ -36,20 +36,23 @@ class RestaurantCardInfo extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text(
-                    data.name!,
-                    style: kCandara18Bold.copyWith(color: kPrimeryColor),
-                  ),
-                  const SizedBox(width: 60),
-                  GestureDetector(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.favorite_border_rounded,
-                        size: 18,
-                      ))
-                ],
+              SizedBox(
+                width: 177,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      data.name!,
+                      style: kCandara18Bold.copyWith(color: kPrimeryColor),
+                    ),
+                    GestureDetector(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.favorite_border_rounded,
+                          size: 18,
+                        ))
+                  ],
+                ),
               ),
               RestaurantCardDetails(
                 info: 'Location:',

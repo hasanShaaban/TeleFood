@@ -1,15 +1,15 @@
 import 'package:equatable/equatable.dart';
 
-import 'datum.dart';
+import 'store_data.dart';
 
 class StoreModel extends Equatable {
-  final List<Datum>? data;
+  final List<StoreData>? data;
 
   const StoreModel({this.data});
 
   factory StoreModel.fromJson(Map<String, dynamic> json) => StoreModel(
         data: (json['data'] as List<dynamic>?)
-            ?.map((e) => Datum.fromJson(e as Map<String, dynamic>))
+            ?.map((e) => StoreData.fromJson(e as Map<String, dynamic>))
             .toList(),
       );
 
