@@ -28,7 +28,7 @@ class ApiService {
       'password': registrationModel.passowrd,
       'confirm_password': registrationModel.confirmPassowrd,
       'location_details': registrationModel.locationDetails,
-      'image':await MultipartFile.fromFile(registrationModel.image!.path)
+      'image': await MultipartFile.fromFile(registrationModel.image!.path)
     });
     var response = await _dio.post('$_baseURL$endPoints',
         options: Options(headers: {
@@ -38,7 +38,7 @@ class ApiService {
     return response.data;
   }
 
-  Future<Map<String, dynamic>> get({required String endPoints})async{
+  Future<Map<String, dynamic>> get({required String endPoints}) async {
     var response = await _dio.get('$_baseURL$endPoints');
     return response.data;
   }

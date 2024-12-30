@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/featuers/home/data/models/store_model/datum.dart';
 
 class RstaurantInfoPresentaion extends StatelessWidget {
   const RstaurantInfoPresentaion({
     super.key,
+    required this.data,
   });
-
+  final Datum data;
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -13,29 +15,38 @@ class RstaurantInfoPresentaion extends StatelessWidget {
         width: double.infinity,
         height: 190,
         decoration: BoxDecoration(
-          color: Colors.amber,
+          color: Colors.black54,
           borderRadius: BorderRadius.circular(20),
-          image: const DecorationImage(
-              image: AssetImage('assets/images/Rest.jpg'), fit: BoxFit.cover),
+          image: DecorationImage(
+              opacity: .6,
+              image: NetworkImage(data.imageUrl!),
+              fit: BoxFit.cover),
         ),
-        child: const Padding(
-          padding: EdgeInsets.only(left: 24),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Sham Foods',
+                data.name!,
                 style: kMvBoli24WithShadow,
               ),
-              Text('Damascus_Almidan', style: kMvBoli20WithShadow),
               Row(
                 children: [
-                  Text('4.5', style: kMvBoli20WithShadow),
-                  SizedBox(
+                  Text(data.locations![0].location!,
+                      style: kMvBoli20WithShadow),
+                  const SizedBox(width: 3),
+                  const Icon(Icons.location_on, color: kTextColor, size: 24)
+                ],
+              ),
+              Row(
+                children: [
+                  Text(data.rate!, style: kMvBoli20WithShadow),
+                  const SizedBox(
                     width: 3,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.star_rate_rounded,
                     color: kTextColor,
                     size: 24,

@@ -15,7 +15,9 @@ class LoadingView extends StatelessWidget {
         padding: EdgeInsets.zero,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        itemBuilder: (context, index) => const RestaurantCard(data: null,),
+        itemBuilder: (context, index) => const RestaurantCard(
+          data: null,
+        ),
         itemCount: 10,
       ),
     ));

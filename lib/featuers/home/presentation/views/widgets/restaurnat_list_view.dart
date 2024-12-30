@@ -13,25 +13,28 @@ class RestaurantListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<GetStoresCubit, GetStoresState>(
       builder: (context, state) {
-        if(state is GetStoresSuccess){
+        if (state is GetStoresSuccess) {
           return SliverToBoxAdapter(
-          child: Expanded(
-            child: Column(
-              children: [
-                ListView.builder(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) => RestaurantCard(data: state.response.data![index]),
-                  itemCount: state.response.data!.length,
-                ),
-              ],
+            child: Expanded(
+              child: Column(
+                children: [
+                  ListView.builder(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) =>
+                        RestaurantCard(data: state.response.data![index]),
+                    itemCount: state.response.data!.length,
+                  ),
+                ],
+              ),
             ),
-          ),
-        );
-        }else if(state is GetStoresFailuer){
-          return Center(child: Text(state.errorMessage),);
-        }else {
+          );
+        } else if (state is GetStoresFailuer) {
+          return Center(
+            child: Text(state.errorMessage),
+          );
+        } else {
           return const LoadingView();
         }
       },

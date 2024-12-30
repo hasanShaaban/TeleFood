@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/widgets/appBar/main_appbar.dart';
+import 'package:telefood/featuers/home/data/models/store_model/datum.dart';
 import 'package:telefood/featuers/shop/presentation/views/widgets/meal_gird_view.dart';
 import 'package:telefood/featuers/shop/presentation/views/widgets/restaurant_info_presentaion.dart';
 
 class ShopViewBody extends StatelessWidget {
-  const ShopViewBody({super.key});
-
+  const ShopViewBody({super.key, required this.data});
+  final Datum data;
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      physics: BouncingScrollPhysics(),
+    return  CustomScrollView(
+      physics:const BouncingScrollPhysics(),
       slivers: [
-        MainAppBar(minAppBarHeight: 95),
-        RstaurantInfoPresentaion(),
-        MealGridView()
+        const MainAppBar(minAppBarHeight: 95),
+        RstaurantInfoPresentaion(data: data),
+        const  MealGridView()
       ],
     );
   }

@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:telefood/featuers/auth/presentation/views/login_view.dart';
 import 'package:telefood/featuers/auth/presentation/views/signup_confermming_view.dart';
 import 'package:telefood/featuers/auth/presentation/views/signup_view.dart';
+import 'package:telefood/featuers/home/data/models/store_model/datum.dart';
 import 'package:telefood/featuers/home/presentation/views/home_view.dart';
 import 'package:telefood/featuers/shop/presentation/views/order_view.dart';
 import 'package:telefood/featuers/shop/presentation/views/shop_view.dart';
@@ -39,7 +40,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kShopViewRouter,
-        builder: (context, state) => const ShopView(),
+        builder: (context, state) => ShopView(data: state.extra as Datum),
       ),
       GoRoute(
         path: kOrderViewRouter,

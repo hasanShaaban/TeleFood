@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/constant.dart';
-import 'package:telefood/featuers/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:telefood/featuers/auth/presentation/manager/signup_cubit/signup_cubit.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/logo_section.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/signup_text_field.dart';

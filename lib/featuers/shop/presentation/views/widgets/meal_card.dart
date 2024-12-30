@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/featuers/shop/data/models/products_model/datum.dart';
 import 'package:telefood/featuers/shop/presentation/views/widgets/meal_image.dart';
 import 'package:telefood/featuers/shop/presentation/views/widgets/meal_info.dart';
 
 class MealCard extends StatelessWidget {
-  const MealCard({super.key});
+  const MealCard({super.key, required this.data});
+
+  final Datum data;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +28,9 @@ class MealCard extends StatelessWidget {
                   blurRadius: 6,
                   offset: Offset(0, 5))
             ]),
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [MealImage(), MealInfo()],
+          children: [MealImage(data: data), MealInfo(data: data)],
         ),
       ),
     );

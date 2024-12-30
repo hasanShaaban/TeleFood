@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/featuers/home/data/models/store_model/datum.dart';
 import 'package:telefood/featuers/home/presentation/views/widgets/restaurant_card_info.dart';
+import 'package:telefood/featuers/shop/presentation/manager/shop_cubit/get_products_cubit.dart';
 
 class RestaurantCard extends StatelessWidget {
   const RestaurantCard({super.key, required this.data});
@@ -13,7 +15,8 @@ class RestaurantCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kShopViewRouter);
+        BlocProvider.of<GetProductsCubit>(context).getProducts(storeName: data!.name!);
+        GoRouter.of(context).go(AppRouter.kShopViewRouter, extra: data);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 23, vertical: 10),
@@ -29,7 +32,7 @@ class RestaurantCard extends StatelessWidget {
                     offset: Offset(0, 4))
               ],
               color: kWhiteColor),
-          child: data != null ? RestaurantCardInfo(data: data!):null,
+          child: data != null ? RestaurantCardInfo(data: data!) : null,
         ),
       ),
     );

@@ -16,7 +16,7 @@ class HomeRepoImpl extends HomeRepo {
       StoreModel response = StoreModel.fromJson(data);
       return right(response);
     } catch (e) {
-      if(e is DioException){
+      if (e is DioException) {
         return left(ServerFailuer.fromDioExceptio(e));
       }
       return left(ServerFailuer(e.toString()));

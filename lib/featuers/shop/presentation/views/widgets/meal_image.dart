@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:telefood/featuers/shop/data/models/products_model/datum.dart';
 
 class MealImage extends StatelessWidget {
   const MealImage({
-    super.key,
+    super.key, required this.data,
   });
+
+  final Datum data;
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +16,9 @@ class MealImage extends StatelessWidget {
           aspectRatio: 12 / 9,
           child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: const Image(
-                image: AssetImage('assets/images/crispy.jpg'),
-                fit: BoxFit.fill,
+              child: Image(
+                image: NetworkImage(data.imgeUrl!),
+                fit: BoxFit.cover,
               ))),
     );
   }

@@ -5,6 +5,7 @@ import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/featuers/auth/presentation/manager/signup_cubit/signup_cubit.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/signup_button.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/signup_confermming_container.dart';
+import 'package:telefood/featuers/home/presentation/manager/stores_cubit/get_stores_cubit.dart';
 
 class SignupConfermmingViewBody extends StatelessWidget {
   const SignupConfermmingViewBody({super.key});
