@@ -28,7 +28,8 @@ class DescriptionSection extends StatelessWidget {
                   ))
             ],
           ),
-          Text(data.productName!, style: kMvBoli30.copyWith(color: kSecondaryColor)),
+          Text(data.productName!,
+              style: kMvBoli30.copyWith(color: kSecondaryColor)),
           Text(
             data.description!,
             style: kMvBoli14.copyWith(color: kPrimeryColor),

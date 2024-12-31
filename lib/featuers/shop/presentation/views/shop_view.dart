@@ -4,7 +4,7 @@ import 'package:telefood/featuers/shop/presentation/views/widgets/shop_view_body
 
 class ShopView extends StatelessWidget {
   const ShopView({super.key, required this.data});
-  final StoreData data ;
+  final StoreData data;
   @override
   Widget build(BuildContext context) {
     return SafeArea(

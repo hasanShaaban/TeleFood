@@ -45,7 +45,8 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kOrderViewRouter,
-        builder: (context, state) => OrderView(data: state.extra as ProductsData),
+        builder: (context, state) =>
+            OrderView(data: state.extra as ProductsData),
       ),
     ],
   );

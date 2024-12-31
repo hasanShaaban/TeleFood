@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telefood/featuers/shop/data/models/products_model/products_model.dart';
 import 'package:telefood/featuers/shop/data/repo/shop_repo.dart';
 
@@ -9,12 +9,12 @@ class GetProductsCubit extends Cubit<GetProductsState> {
   GetProductsCubit(this.shopRepo) : super(GetProductsInitial());
 
   final ShopRepo shopRepo;
-  Future<void> getProducts({required String storeName}) async{
+  Future<void> getProducts({required String storeName}) async {
     emit(GetProductsLoading());
     var result = await shopRepo.getProducts(storeName);
-    result.fold((failuer){
+    result.fold((failuer) {
       emit(GetProductsFailuer(failuer.errorMessage));
-    }, (response){
+    }, (response) {
       emit(GetProductsSuccess(response));
     });
   }

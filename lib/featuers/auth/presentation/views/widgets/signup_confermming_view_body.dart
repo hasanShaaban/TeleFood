@@ -14,7 +14,9 @@ class SignupConfermmingViewBody extends StatelessWidget {
     return BlocConsumer<SignupCubit, SignupState>(
       listener: (context, state) {
         if (state is SignupSuccess) {
-          GoRouter.of(context).pushReplacement(AppRouter.kHomeViewRouter);
+          GoRouter.of(context).pushReplacement(AppRouter.kLoginViewRouter);
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: Text('Please, login with your new account')));
         } else if (state is SignupFailuer) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(

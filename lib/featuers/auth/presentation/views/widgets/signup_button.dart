@@ -33,9 +33,6 @@ class SignupButton extends StatelessWidget {
             confirmPassowrd: provider.confirmPassowrd,
             image: provider.image,
           );
-          print(provider.passowrd);
-          print(provider.mobile);
-          print(provider.confirmPassowrd);
           BlocProvider.of<SignupCubit>(context)
               .signupRequest(registrationModel);
         },

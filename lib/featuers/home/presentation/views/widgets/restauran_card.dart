@@ -15,7 +15,8 @@ class RestaurantCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        BlocProvider.of<GetProductsCubit>(context).getProducts(storeName: data!.name!);
+        BlocProvider.of<GetProductsCubit>(context)
+            .getProducts(storeName: data!.name!);
         GoRouter.of(context).push(AppRouter.kShopViewRouter, extra: data);
       },
       child: Padding(

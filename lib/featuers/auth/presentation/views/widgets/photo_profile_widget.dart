@@ -2,9 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:telefood/core/providers/signup_info_provider.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/core/utils/user_token.dart';
 
 class PhotoProfileWidget extends StatefulWidget {
   const PhotoProfileWidget({
@@ -22,7 +24,27 @@ class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
   Future<void> pickImageFromGallery() async {
     final XFile? pickedFile =
         await _picker.pickImage(source: ImageSource.gallery);
+
     if (pickedFile != null) {
+      // Get the app's documents directory
+      final Directory appDir = await getApplicationDocumentsDirectory();
+
+      // Create a folder named 'images' if it doesn't exist
+      final Directory imagesDir = Directory('${appDir.path}/images');
+      if (!await imagesDir.exists()) {
+        await imagesDir.create(recursive: true);
+      }
+
+      // Create a new file path for the image in the 'images' folder
+      final String fileName =
+          pickedFile.name; // Preserve the original file name
+      final File newImage = File('${imagesDir.path}/$fileName');
+      userImage = newImage.path;
+
+      // Copy the picked image to the new path
+      await File(pickedFile.path).copy(newImage.path);
+
+      // Update the UI with the saved image
       setState(() {
         _selectedImage = File(pickedFile.path);
       });

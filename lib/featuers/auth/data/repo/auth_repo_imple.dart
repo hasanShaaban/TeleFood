@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:telefood/core/errors/failuer.dart';
 import 'package:telefood/core/utils/api_service.dart';
+import 'package:telefood/core/utils/user_token.dart';
 import 'package:telefood/featuers/auth/data/models/login_model.dart';
 import 'package:telefood/featuers/auth/data/models/login_response.dart';
 import 'package:telefood/featuers/auth/data/models/registration_model.dart';
@@ -35,6 +36,7 @@ class AuthRepoImple implements AuthRepo {
       var data = await apiService.postLogin(
           endPoints: 'login?', loginModel: loginModel);
       LoginResponse response = LoginResponse.fromJson(data);
+      token = response.token;
       return right(response);
     } catch (e) {
       if (e is DioException) {

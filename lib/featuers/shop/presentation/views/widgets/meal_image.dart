@@ -3,7 +3,8 @@ import 'package:telefood/featuers/shop/data/models/products_model/products_data.
 
 class MealImage extends StatelessWidget {
   const MealImage({
-    super.key, required this.data,
+    super.key,
+    required this.data,
   });
 
   final ProductsData data;

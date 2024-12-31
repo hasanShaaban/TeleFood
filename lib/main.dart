@@ -6,6 +6,8 @@ import 'package:telefood/core/providers/signup_info_provider.dart';
 import 'package:telefood/core/utils/api_service.dart';
 import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/core/widgets/drawer/cubit/user_info_cubit.dart';
+import 'package:telefood/core/widgets/drawer/repo/userInfo_repo.dart';
 import 'package:telefood/featuers/auth/data/repo/auth_repo.dart';
 import 'package:telefood/featuers/auth/data/repo/auth_repo_imple.dart';
 import 'package:telefood/featuers/auth/presentation/manager/login_cubit/login_cubit.dart';
@@ -26,6 +28,7 @@ ApiService apiService = ApiService(Dio());
 final AuthRepo authRepo = AuthRepoImple(apiService: apiService);
 final HomeRepo homeRepo = HomeRepoImpl(apiService: apiService);
 final ShopRepo shopRepo = ShopRepoImpl(apiService: apiService);
+final UserinfoRepo userinfoRepo = UserinfoRepo(apiService);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -45,7 +48,10 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => GetProductsCubit(shopRepo),
-        )
+        ),
+        BlocProvider(
+          create: (context) => UserInfoCubit(userinfoRepo),
+        ),
       ],
       child: MultiProvider(
         providers: [

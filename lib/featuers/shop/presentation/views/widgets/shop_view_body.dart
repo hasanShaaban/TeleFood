@@ -9,12 +9,12 @@ class ShopViewBody extends StatelessWidget {
   final StoreData data;
   @override
   Widget build(BuildContext context) {
-    return  CustomScrollView(
-      physics:const BouncingScrollPhysics(),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         const MainAppBar(minAppBarHeight: 95),
         RstaurantInfoPresentaion(data: data),
-        const  MealGridView()
+        const MealGridView()
       ],
     );
   }

@@ -11,12 +11,12 @@ class MealInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(data.productName!, style: kMvBoli20.copyWith(color: kPrimeryColor)),
+        Text(data.productName!,
+            style: kMvBoli20.copyWith(color: kPrimeryColor)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(data.price!,
-                style: kMvBoli14.copyWith(color: kPrimeryColor)),
+            Text(data.price!, style: kMvBoli14.copyWith(color: kPrimeryColor)),
             Text('S.P', style: kMvBoli14.copyWith(color: kTextColor))
           ],
         )
