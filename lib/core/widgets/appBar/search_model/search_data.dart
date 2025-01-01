@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 import 'location.dart';
 
-class StoreData extends Equatable {
+class SearchData extends Equatable {
   final int? storeId;
   final String? name;
   final String? description;
@@ -11,7 +11,7 @@ class StoreData extends Equatable {
   final String? category;
   final List<Location>? locations;
 
-  const StoreData({
+  const SearchData({
     this.storeId,
     this.name,
     this.description,
@@ -21,7 +21,7 @@ class StoreData extends Equatable {
     this.locations,
   });
 
-  factory StoreData.fromJson(Map<String, dynamic> json) => StoreData(
+  factory SearchData.fromJson(Map<String, dynamic> json) => SearchData(
         storeId: json['store_id'] as int?,
         name: json['name'] as String?,
         description: json['description'] as String?,
@@ -51,6 +51,7 @@ class StoreData extends Equatable {
       description,
       rate,
       imageUrl,
+      category,
       locations,
     ];
   }

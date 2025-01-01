@@ -1,10 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/core/widgets/appBar/search_cubit/search_cubit.dart';
 
-class CustomSearchTextField extends StatelessWidget {
+class CustomSearchTextField extends StatefulWidget {
   const CustomSearchTextField({
     super.key,
   });
+
+  @override
+  State<CustomSearchTextField> createState() => _CustomSearchTextFieldState();
+}
+
+class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
+  FocusNode focusNode = FocusNode();
+   bool _isSearching = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Listen for focus changes on the search text field
+    focusNode.addListener(() {
+      setState(() {
+        _isSearching = focusNode.hasFocus;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +36,14 @@ class CustomSearchTextField extends StatelessWidget {
       height: height * .05,
       width: width * .6,
       child: TextField(
+        focusNode: focusNode,
+        onSubmitted: (value) {
+          if(value == ''){
+            value = 'null';
+          }
+          BlocProvider.of<SearchCubit>(context).search(value: value.toString(), isSearching: _isSearching);
+          print(value.toString());
+        },
         style: kCandara18Bold,
         scrollPadding: EdgeInsets.zero,
         textAlignVertical: TextAlignVertical.center,

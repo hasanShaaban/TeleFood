@@ -58,9 +58,9 @@ class RestaurantCardInfo extends StatelessWidget {
                 info: 'Location:',
                 value: data.locations![0].governorate!,
               ),
-              const RestaurantCardDetails(
+              RestaurantCardDetails(
                 info: 'Category:',
-                value: 'fast food',
+                value: data.category!,
               ),
               RestaurantCardDetails(
                 info: 'Rate:',

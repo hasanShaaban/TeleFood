@@ -6,6 +6,8 @@ import 'package:telefood/core/providers/signup_info_provider.dart';
 import 'package:telefood/core/utils/api_service.dart';
 import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/core/widgets/appBar/repo/search_repo.dart';
+import 'package:telefood/core/widgets/appBar/search_cubit/search_cubit.dart';
 import 'package:telefood/core/widgets/drawer/cubit/user_info_cubit.dart';
 import 'package:telefood/core/widgets/drawer/repo/userInfo_repo.dart';
 import 'package:telefood/featuers/auth/data/repo/auth_repo.dart';
@@ -29,6 +31,7 @@ final AuthRepo authRepo = AuthRepoImple(apiService: apiService);
 final HomeRepo homeRepo = HomeRepoImpl(apiService: apiService);
 final ShopRepo shopRepo = ShopRepoImpl(apiService: apiService);
 final UserinfoRepo userinfoRepo = UserinfoRepo(apiService);
+final SearchRepo searchRepo = SearchRepo(apiService);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -51,6 +54,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => UserInfoCubit(userinfoRepo),
+        ),
+        BlocProvider(
+          create: (context) => SearchCubit(searchRepo),
         ),
       ],
       child: MultiProvider(
