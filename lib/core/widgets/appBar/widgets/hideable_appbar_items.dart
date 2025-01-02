@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:telefood/core/widgets/appBar/widgets/custom_dropdown_button.dart';
+import 'package:telefood/core/widgets/appBar/widgets/custom_dropdown_category_butto.dart';
+import 'package:telefood/core/widgets/appBar/widgets/custom_dropdown_location_button.dart';
 
 class HideableAppBarItems extends StatelessWidget {
   const HideableAppBarItems({
@@ -24,13 +25,11 @@ class HideableAppBarItems extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CustomDropDownButton(hint: 'Location'),
+              CustomDropDownLocationButton(hint: 'Location'),
               SizedBox(
                 width: 70,
               ),
-              CustomDropDownButton(
-                hint: 'Category',
-              )
+              CustomDropDownCategoryButton(hint: 'Category'),
             ],
           ),
         )

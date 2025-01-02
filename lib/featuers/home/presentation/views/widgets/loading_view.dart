@@ -9,8 +9,8 @@ class LoadingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
         child: Shimmer.fromColors(
-      baseColor: Colors.grey[300]!,
-      highlightColor: Colors.grey[100]!,
+      baseColor: Colors.grey[400]!,
+      highlightColor: Colors.grey[200]!,
       child: ListView.builder(
         padding: EdgeInsets.zero,
         shrinkWrap: true,

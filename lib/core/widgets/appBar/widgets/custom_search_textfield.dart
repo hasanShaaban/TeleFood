@@ -14,7 +14,7 @@ class CustomSearchTextField extends StatefulWidget {
 
 class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
   FocusNode focusNode = FocusNode();
-   bool _isSearching = false;
+  bool _isSearching = false;
 
   @override
   void initState() {
@@ -38,10 +38,11 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
       child: TextField(
         focusNode: focusNode,
         onSubmitted: (value) {
-          if(value == ''){
+          if (value == '') {
             value = 'null';
           }
-          BlocProvider.of<SearchCubit>(context).search(value: value.toString(), isSearching: _isSearching);
+          BlocProvider.of<SearchCubit>(context)
+              .search(value: value.toString(), isSearching: _isSearching);
           print(value.toString());
         },
         style: kCandara18Bold,

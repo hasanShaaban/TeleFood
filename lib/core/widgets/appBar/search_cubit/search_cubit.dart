@@ -9,8 +9,9 @@ class SearchCubit extends Cubit<SearchState> {
   SearchCubit(this.searchRepo) : super(SearchInitial());
 
   final SearchRepo searchRepo;
-  Future<void> search({required String value, required bool isSearching}) async {
-    if(!isSearching || value == 'null'){
+  Future<void> search(
+      {required String value, required bool isSearching}) async {
+    if (!isSearching || value == 'null') {
       emit(SearchInitial());
       return;
     }
