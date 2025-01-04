@@ -17,6 +17,7 @@ import 'package:telefood/featuers/home/data/repo/home_repo_impl.dart';
 import 'package:telefood/featuers/home/presentation/manager/stores_cubit/get_stores_cubit.dart';
 import 'package:telefood/featuers/shop/data/repo/shop_repo.dart';
 import 'package:telefood/featuers/shop/data/repo/shop_repo_impl.dart';
+import 'package:telefood/featuers/shop/presentation/manager/order_cubit/order_cubit.dart';
 import 'package:telefood/featuers/shop/presentation/manager/shop_cubit/get_products_cubit.dart';
 
 ApiService apiService = ApiService(Dio());
@@ -50,4 +51,7 @@ List<SingleChildWidget> providers = [
   BlocProvider(
     create: (context) => CategoryCubit(repo)..getCategory(),
   ),
+  BlocProvider(
+    create: (context) => OrderCubit(shopRepo),
+  )
 ];

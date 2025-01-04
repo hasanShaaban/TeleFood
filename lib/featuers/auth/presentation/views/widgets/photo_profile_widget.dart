@@ -18,7 +18,7 @@ class PhotoProfileWidget extends StatefulWidget {
 }
 
 class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
-  File? _selectedImage;
+  String? _selectedImage;
   final ImagePicker _picker = ImagePicker();
 
   Future<void> pickImageFromGallery() async {
@@ -42,11 +42,11 @@ class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
       userImage = newImage.path;
 
       // Copy the picked image to the new path
-      await File(pickedFile.path).copy(newImage.path);
+      File newSelectedImage = await File(pickedFile.path).copy(newImage.path);
 
       // Update the UI with the saved image
       setState(() {
-        _selectedImage = File(pickedFile.path);
+        _selectedImage = newSelectedImage.path;
       });
     }
   }
@@ -80,7 +80,7 @@ class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
             child: Center(
               child: _selectedImage != null
                   ? CircleAvatar(
-                      radius: 70, backgroundImage: FileImage(_selectedImage!))
+                      radius: 70, backgroundImage: FileImage(File(userImage!)))
                   : Text(
                       'upload your\n profile image',
                       style: kMvBoli18.copyWith(
@@ -106,7 +106,7 @@ class _PhotoProfileWidgetState extends State<PhotoProfileWidget> {
                 onPressed: () async {
                   await pickImageFromGallery();
                   Provider.of<SignupInfoProvider>(context, listen: false)
-                      .setImage(newImage: _selectedImage);
+                      .setImage(newImage: _selectedImage!);
                 },
                 icon: const Icon(
                   Icons.add,

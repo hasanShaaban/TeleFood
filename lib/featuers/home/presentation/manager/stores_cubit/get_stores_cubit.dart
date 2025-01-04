@@ -11,11 +11,11 @@ class GetStoresCubit extends Cubit<GetStoresState> {
 
   final HomeRepo homeRepo;
   Future<void> getStores() async {
-    if(Governorates.allGovernorates.isEmpty){
+    if (Governorates.allGovernorates.isEmpty) {
       emit(GetStoresAndCategoryLoading());
-    }else{
+    } else {
       emit(GetStoresLoading());
-    }   
+    }
     var result = await homeRepo.getStores();
     result.fold((failuer) {
       emit(GetStoresFailuer(failuer.errorMessage));
@@ -24,32 +24,32 @@ class GetStoresCubit extends Cubit<GetStoresState> {
     });
   }
 
-  Future<void> getStoresByCategory(String category) async{
+  Future<void> getStoresByCategory(String category) async {
     dynamic result;
     emit(GetStoresLoading());
-    if(category == 'all'){
+    if (category == 'all') {
       result = await homeRepo.getStores();
-    }else{
+    } else {
       result = await homeRepo.getStoresByCategory(category);
     }
-    result.fold((failuer){
+    result.fold((failuer) {
       emit(GetStoresFailuer(failuer.errorMessage));
-    }, (response){
+    }, (response) {
       emit(GetStoresSuccess(response));
     });
   }
 
-  Future<void> getStoresByLocation(String location) async{
+  Future<void> getStoresByLocation(String location) async {
     dynamic result;
     emit(GetStoresLoading());
-    if(location == 'all'){
+    if (location == 'all') {
       result = await homeRepo.getStores();
-    }else{
+    } else {
       result = await homeRepo.getStoresByLocation(location);
     }
-    result.fold((failuer){
+    result.fold((failuer) {
       emit(GetStoresFailuer(failuer.errorMessage));
-    }, (response){
+    }, (response) {
       emit(GetStoresSuccess(response));
     });
   }

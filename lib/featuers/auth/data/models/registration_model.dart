@@ -1,9 +1,7 @@
-import 'dart:io';
-
 class RegistrationModel {
   String? firstName;
   String? lastName;
-  File? image;
+  String? image;
   String? mobile;
   String? passowrd;
   String? confirmPassowrd;

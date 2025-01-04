@@ -1,3 +1,1 @@
-class GovernorateRepo {
-  
-}
+class GovernorateRepo {}

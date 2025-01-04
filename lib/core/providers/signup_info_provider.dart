@@ -1,11 +1,9 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 class SignupInfoProvider extends ChangeNotifier {
   String? firstName;
   String? lastName;
-  File? image;
+  String? image;
   String? mobile;
   String? passowrd;
   String? confirmPassowrd;
@@ -23,7 +21,7 @@ class SignupInfoProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setImage({File? newImage}) async {
+  void setImage({required String newImage}) async {
     image = newImage;
     notifyListeners();
   }

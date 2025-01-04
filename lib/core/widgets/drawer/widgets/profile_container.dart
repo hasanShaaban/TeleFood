@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telefood/core/utils/constant.dart';
-import 'package:telefood/core/utils/user_token.dart';
 import 'package:telefood/core/widgets/drawer/cubit/user_info_cubit.dart';
 
 class ProfileContainer extends StatelessWidget {
@@ -40,7 +39,8 @@ class ProfileContainer extends StatelessWidget {
                   CircleAvatar(
                     radius: 60,
                     backgroundColor: kWhiteColor,
-                    backgroundImage: FileImage(File(userImage!)),
+                    backgroundImage:
+                        FileImage(File(state.response.data!.image!)),
                   ),
                   const SizedBox(height: 20),
                   Row(
@@ -53,7 +53,7 @@ class ProfileContainer extends StatelessWidget {
                       ),
                       const SizedBox(width: 5),
                       Text(
-                          '${state.response.user!.firstName} ${state.response.user!.lastName}',
+                          '${state.response.data!.firstName} ${state.response.data!.lastName}',
                           style: kCandara20.copyWith(color: kWhiteColor)),
                     ],
                   ),
@@ -69,7 +69,7 @@ class ProfileContainer extends StatelessWidget {
                         size: 24,
                       ),
                       const SizedBox(width: 5),
-                      Text('${state.response.user!.mobile}',
+                      Text('${state.response.data!.mobile}',
                           style: kCandara20.copyWith(color: kWhiteColor)),
                     ],
                   ),

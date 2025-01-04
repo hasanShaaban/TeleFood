@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/featuers/shop/data/models/products_model/products_data.dart';
 import 'package:telefood/featuers/shop/presentation/views/widgets/order_description_textfield.dart';
 import 'package:telefood/featuers/shop/presentation/views/widgets/order_quantity_section.dart';
 
 class UserOrderInfo extends StatelessWidget {
-  const UserOrderInfo({super.key});
+  const UserOrderInfo({super.key, required this.data});
 
+  final ProductsData data;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,7 +17,7 @@ class UserOrderInfo extends StatelessWidget {
         children: [
           Text('Your order :',
               style: kCandara18Bold.copyWith(color: kTextColor)),
-          const QuantitySection(),
+          QuantitySection(data: data),
           const SizedBox(height: 10),
           const OrderDescriptionTextFiled()
         ],

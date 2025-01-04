@@ -1,22 +1,22 @@
 import 'package:equatable/equatable.dart';
 
-import 'user.dart';
+import 'data.dart';
 
 class UserModel extends Equatable {
-  final User? user;
+  final Data? data;
 
-  const UserModel({this.user});
+  const UserModel({this.data});
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-        user: json['user'] == null
+        data: json['data'] == null
             ? null
-            : User.fromJson(json['user'] as Map<String, dynamic>),
+            : Data.fromJson(json['data'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {
-        'user': user?.toJson(),
+        'data': data?.toJson(),
       };
 
   @override
-  List<Object?> get props => [user];
+  List<Object?> get props => [data];
 }

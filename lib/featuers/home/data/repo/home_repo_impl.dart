@@ -15,7 +15,7 @@ class HomeRepoImpl extends HomeRepo {
     try {
       var data = await apiService.get(endPoints: 'stores/get?');
       StoreModel response = StoreModel.fromJson(data);
-      if(Governorates.allGovernorates.isEmpty){
+      if (Governorates.allGovernorates.isEmpty) {
         Governorates.allGovernorates = Governorates.getGovernorates(response);
       }
       return right(response);
@@ -26,11 +26,13 @@ class HomeRepoImpl extends HomeRepo {
       return left(ServerFailuer(e.toString()));
     }
   }
-  
+
   @override
-  Future<Either<Failuer, StoreModel>> getStoresByCategory(String category) async{
+  Future<Either<Failuer, StoreModel>> getStoresByCategory(
+      String category) async {
     try {
-      var data = await apiService.get(endPoints: 'category/showStore/$category');
+      var data =
+          await apiService.get(endPoints: 'category/showStore/$category');
       StoreModel response = StoreModel.fromJson(data);
       return right(response);
     } catch (e) {
@@ -40,11 +42,13 @@ class HomeRepoImpl extends HomeRepo {
       return left(ServerFailuer(e.toString()));
     }
   }
-  
+
   @override
-  Future<Either<Failuer, StoreModel>> getStoresByLocation(String location) async{
+  Future<Either<Failuer, StoreModel>> getStoresByLocation(
+      String location) async {
     try {
-      var data = await apiService.get(endPoints: 'governorate/stores/$location');
+      var data =
+          await apiService.get(endPoints: 'governorate/stores/$location');
       StoreModel response = StoreModel.fromJson(data);
       return right(response);
     } catch (e) {

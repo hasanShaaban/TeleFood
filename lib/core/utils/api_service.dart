@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:telefood/core/utils/user_token.dart';
 import 'package:telefood/featuers/auth/data/models/login_model.dart';
 import 'package:telefood/featuers/auth/data/models/registration_model.dart';
+import 'package:telefood/featuers/shop/data/models/order_model/order_model.dart';
 
 class ApiService {
   final _baseURL = 'http://localhost:8000/api/';
@@ -28,7 +30,7 @@ class ApiService {
       'password': registrationModel.passowrd,
       'confirm_password': registrationModel.confirmPassowrd,
       'location_details': registrationModel.locationDetails,
-      'image': await MultipartFile.fromFile(registrationModel.image!.path)
+      'image': registrationModel.image,
     });
     var response = await _dio.post('$_baseURL$endPoints',
         options: Options(headers: {
@@ -37,6 +39,18 @@ class ApiService {
         data: formData);
     return response.data;
   }
+
+  Future<Map<String, dynamic>> postOrder(
+      {required String endPoints, required OrderModel orderModel}) async {
+        var response = await _dio.post('$_baseURL$endPoints', data: {
+          'product_id': orderModel.id,
+          'quantity':orderModel.quantity,
+          'description':orderModel.description,
+          'location': userLocation,
+          'token': token,
+        });
+        return response.data;
+      }
 
   Future<Map<String, dynamic>> get(
       {required String endPoints, var data}) async {

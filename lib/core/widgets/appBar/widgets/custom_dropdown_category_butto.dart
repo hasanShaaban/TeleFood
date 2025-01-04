@@ -90,8 +90,8 @@ class CustomDropDownCategoryButton extends StatelessWidget {
                 ),
               ),
               borderRadius: BorderRadius.circular(17),
-              items:const [
-                 DropdownMenuItem(child: Text('No category to show'))
+              items: const [
+                DropdownMenuItem(child: Text('No category to show'))
               ],
               onChanged: (value) {},
             )),

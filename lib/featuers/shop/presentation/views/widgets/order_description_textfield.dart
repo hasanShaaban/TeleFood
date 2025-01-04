@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:telefood/core/providers/basket_provider.dart';
 import 'package:telefood/core/utils/constant.dart';
 
 class OrderDescriptionTextFiled extends StatelessWidget {
@@ -11,6 +13,9 @@ class OrderDescriptionTextFiled extends StatelessWidget {
     return SizedBox(
       height: 80,
       child: TextField(
+        onChanged: (value) {
+          context.read<BasketProvider>().setDescription(newDescription: value);
+        },
         cursorColor: kSecondaryColor,
         cursorHeight: 18,
         expands: true,

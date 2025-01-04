@@ -10,6 +10,7 @@ abstract class GetStoresState extends Equatable {
 final class GetStoresInitial extends GetStoresState {}
 
 final class GetStoresLoading extends GetStoresState {}
+
 final class GetStoresAndCategoryLoading extends GetStoresState {}
 
 final class GetStoresFailuer extends GetStoresState {
