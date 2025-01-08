@@ -3,5 +3,6 @@ class OrderModel {
   String quantity;
   String description;
 
-  OrderModel({required this.id, required this.quantity, required this.description});
+  OrderModel(
+      {required this.id, required this.quantity, required this.description});
 }

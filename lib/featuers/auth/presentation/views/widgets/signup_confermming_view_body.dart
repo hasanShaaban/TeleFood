@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:telefood/core/utils/app_router.dart';
+import 'package:telefood/core/utils/user_token.dart';
+import 'package:telefood/core/widgets/drawer/cubit/user_info_cubit.dart';
 import 'package:telefood/featuers/auth/presentation/manager/signup_cubit/signup_cubit.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/signup_button.dart';
 import 'package:telefood/featuers/auth/presentation/views/widgets/signup_confermming_container.dart';
@@ -12,11 +14,11 @@ class SignupConfermmingViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignupCubit, SignupState>(
-      listener: (context, state) {
+      listener: (context, state) async {
         if (state is SignupSuccess) {
-          GoRouter.of(context).pushReplacement(AppRouter.kLoginViewRouter);
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              content: Text('Please, login with your new account')));
+          GoRouter.of(context).pushReplacement(AppRouter.kHomeViewRouter);
+          token = state.response.message!.token;
+          await BlocProvider.of<UserInfoCubit>(context).getUserInfo();
         } else if (state is SignupFailuer) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(

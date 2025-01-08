@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telefood/featuers/auth/data/models/registration_model.dart';
-import 'package:telefood/featuers/auth/data/models/registration_response.dart';
+import 'package:telefood/featuers/auth/data/models/registration_response/registration_response.dart';
 import 'package:telefood/featuers/auth/data/repo/auth_repo.dart';
 
 part 'signup_state.dart';

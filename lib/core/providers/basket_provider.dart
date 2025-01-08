@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BasketProvider extends ChangeNotifier{
+class BasketProvider extends ChangeNotifier {
   String? id;
   String? quantity;
   String? description;
@@ -12,14 +12,13 @@ class BasketProvider extends ChangeNotifier{
     notifyListeners();
   }
 
-  void setQuantity({required String newQuantity}){
+  void setQuantity({required String newQuantity}) {
     quantity = newQuantity;
     notifyListeners();
   }
 
-  void setDescription({required String newDescription}){
+  void setDescription({required String newDescription}) {
     description = newDescription;
     notifyListeners();
   }
-
 }

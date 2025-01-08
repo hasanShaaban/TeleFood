@@ -42,15 +42,15 @@ class ApiService {
 
   Future<Map<String, dynamic>> postOrder(
       {required String endPoints, required OrderModel orderModel}) async {
-        var response = await _dio.post('$_baseURL$endPoints', data: {
-          'product_id': orderModel.id,
-          'quantity':orderModel.quantity,
-          'description':orderModel.description,
-          'location': userLocation,
-          'token': token,
-        });
-        return response.data;
-      }
+    var response = await _dio.post('$_baseURL$endPoints', data: {
+      'product_id': orderModel.id,
+      'quantity': orderModel.quantity,
+      'description': orderModel.description,
+      'location': userLocation,
+      'token': token,
+    });
+    return response.data;
+  }
 
   Future<Map<String, dynamic>> get(
       {required String endPoints, var data}) async {

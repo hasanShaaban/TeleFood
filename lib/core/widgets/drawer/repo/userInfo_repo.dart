@@ -13,7 +13,8 @@ class UserinfoRepo {
     try {
       var data = await apiService.get(endPoints: 'UserInfo?', data: params);
       UserModel response = UserModel.fromJson(data);
-      userLocation = '${response.data!.location}/${response.data!.locationDetails}';
+      userLocation =
+          '${response.data!.location}/${response.data!.locationDetails}';
       return right(response);
     } catch (e) {
       if (e is DioException) {

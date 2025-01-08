@@ -26,13 +26,15 @@ class ShopRepoImpl extends ShopRepo {
   }
 
   @override
-  Future<Either<Failuer, OrderResponse>> postOrder(OrderModel orderModel) async{
-    try{
-      var data = await apiService.postOrder(endPoints: 'basket/store?', orderModel: orderModel);
+  Future<Either<Failuer, OrderResponse>> postOrder(
+      OrderModel orderModel) async {
+    try {
+      var data = await apiService.postOrder(
+          endPoints: 'basket/store?', orderModel: orderModel);
       OrderResponse response = OrderResponse.fromJson(data);
       return right(response);
-    }catch(e){
-      if(e is DioException){
+    } catch (e) {
+      if (e is DioException) {
         return left(ServerFailuer.fromDioExceptio(e));
       }
       return left(ServerFailuer(e.toString()));

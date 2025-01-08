@@ -3,15 +3,15 @@ import 'package:telefood/featuers/shop/data/models/products_model/products_data.
 import 'package:telefood/featuers/shop/presentation/views/widgets/order_view_body.dart';
 
 class OrderView extends StatelessWidget {
-  const OrderView({super.key, required this.data});
-
+  const OrderView({super.key, required this.data, required this.target});
+  final String target;
   final ProductsData data;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: OrderViewBody(data: data),
+      body: OrderViewBody(data: data, target: target,),
     ));
   }
 }

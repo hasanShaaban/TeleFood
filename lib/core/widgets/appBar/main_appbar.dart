@@ -7,9 +7,9 @@ import 'package:telefood/core/widgets/appBar/widgets/hideable_appbar_items.dart'
 class MainAppBar extends StatelessWidget {
   const MainAppBar({
     super.key,
-    this.minAppBarHeight,
+    this.minAppBarHeight, this.target,
   });
-
+  final String? target;
   final double? minAppBarHeight;
   @override
   Widget build(BuildContext context) {

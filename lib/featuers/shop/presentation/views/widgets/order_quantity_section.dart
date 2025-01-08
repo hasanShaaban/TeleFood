@@ -4,10 +4,9 @@ import 'package:telefood/core/providers/basket_provider.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/featuers/shop/data/models/products_model/products_data.dart';
 
-
 class QuantitySection extends StatelessWidget {
-  const QuantitySection({super.key,required this.data});
-final ProductsData data;
+  const QuantitySection({super.key, required this.data});
+  final ProductsData data;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -20,7 +19,9 @@ final ProductsData data;
           child: TextField(
             onChanged: (value) {
               context.read<BasketProvider>().setQuantity(newQuantity: value);
-              context.read<BasketProvider>().setId(newId: data.productId!.toString());
+              context
+                  .read<BasketProvider>()
+                  .setId(newId: data.productId!.toString());
             },
             cursorHeight: 18,
             cursorColor: kSecondaryColor,

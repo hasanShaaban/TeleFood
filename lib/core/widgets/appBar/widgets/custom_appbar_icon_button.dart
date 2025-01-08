@@ -5,8 +5,9 @@ import 'package:telefood/core/utils/constant.dart';
 class CustomAppBarIconButton extends StatelessWidget {
   const CustomAppBarIconButton({
     super.key,
-    required this.icon,
+    required this.icon, this.target,
   });
+  final String? target;
   final IconData icon;
   @override
   Widget build(BuildContext context) {

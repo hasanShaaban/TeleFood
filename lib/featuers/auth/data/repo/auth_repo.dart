@@ -3,7 +3,7 @@ import 'package:telefood/core/errors/failuer.dart';
 import 'package:telefood/featuers/auth/data/models/login_model.dart';
 import 'package:telefood/featuers/auth/data/models/login_response.dart';
 import 'package:telefood/featuers/auth/data/models/registration_model.dart';
-import 'package:telefood/featuers/auth/data/models/registration_response.dart';
+import 'package:telefood/featuers/auth/data/models/registration_response/registration_response.dart';
 
 abstract class AuthRepo {
   Future<Either<Failuer, RegistrationResponse>> signupRequest(

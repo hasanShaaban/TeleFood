@@ -13,50 +13,53 @@ import 'package:telefood/featuers/shop/presentation/views/widgets/total_price_se
 import 'package:telefood/featuers/shop/presentation/views/widgets/user_order_info.dart';
 
 class OrderViewBody extends StatelessWidget {
-  const OrderViewBody({super.key, required this.data});
-
+  const OrderViewBody({super.key, required this.data, required this.target});
   final ProductsData data;
-
+  final String target;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<OrderCubit, OrderState>(
       listener: (context, state) {
-        if(state is OrderSuccess){
-          showDialog(context: context, builder:(context){
-            return AlertDialog(
-              icon: const Icon(Icons.check_circle_rounded, size: 24),
-              iconColor: Colors.green,
-              elevation: 1,
-              backgroundColor: kWhiteColor,
-              content: Text(state.response.message!),
-              actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        child:const Text('OK'),
-                      ),
-                    ],
-            );
-          });
-        }else if(state is OrderFailuer){
-          showDialog(context: context, builder:(context){
-            return AlertDialog(
-              icon: const Icon(Icons.info, size: 24),
-              iconColor: kSecondaryColor,
-              elevation: 3,
-              backgroundColor: kWhiteColor,
-              content: Text(state.errorMessage),
-              actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        child:const Text('OK'),
-                      ),
-                    ],
-            );
-          });
+        if (state is OrderSuccess) {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  icon: const Icon(Icons.check_circle_rounded, size: 24),
+                  iconColor: Colors.green,
+                  elevation: 1,
+                  backgroundColor: kWhiteColor,
+                  content: Text(state.response.message!),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              });
+        } else if (state is OrderFailuer) {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  icon: const Icon(Icons.info, size: 24),
+                  iconColor: kSecondaryColor,
+                  elevation: 3,
+                  backgroundColor: kWhiteColor,
+                  content: Text(state.errorMessage),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              });
         }
       },
       builder: (context, state) {
@@ -68,7 +71,7 @@ class OrderViewBody extends StatelessWidget {
             CustomScrollView(
               physics: const BouncingScrollPhysics(),
               slivers: [
-                const MainAppBar(minAppBarHeight: 95),
+                MainAppBar(minAppBarHeight: 95, target: target),
                 SliverToBoxAdapter(
                   child: Column(
                     children: [
@@ -95,9 +98,9 @@ class OrderViewBody extends StatelessWidget {
               ],
             ),
             Center(
-              child: (state is OrderLoading)
-                  ? const CircularProgressIndicator()
-                  : null)
+                child: (state is OrderLoading)
+                    ? const CircularProgressIndicator()
+                    : null)
           ]),
         );
       },

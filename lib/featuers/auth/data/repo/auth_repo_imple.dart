@@ -6,7 +6,7 @@ import 'package:telefood/core/utils/user_token.dart';
 import 'package:telefood/featuers/auth/data/models/login_model.dart';
 import 'package:telefood/featuers/auth/data/models/login_response.dart';
 import 'package:telefood/featuers/auth/data/models/registration_model.dart';
-import 'package:telefood/featuers/auth/data/models/registration_response.dart';
+import 'package:telefood/featuers/auth/data/models/registration_response/registration_response.dart';
 import 'package:telefood/featuers/auth/data/repo/auth_repo.dart';
 
 class AuthRepoImple implements AuthRepo {

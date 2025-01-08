@@ -12,6 +12,9 @@ import 'package:telefood/featuers/auth/data/repo/auth_repo.dart';
 import 'package:telefood/featuers/auth/data/repo/auth_repo_imple.dart';
 import 'package:telefood/featuers/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:telefood/featuers/auth/presentation/manager/signup_cubit/signup_cubit.dart';
+import 'package:telefood/featuers/cart/data/repo/cart_repo.dart';
+import 'package:telefood/featuers/cart/data/repo/cart_repo_impl.dart';
+import 'package:telefood/featuers/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:telefood/featuers/home/data/repo/home_repo.dart';
 import 'package:telefood/featuers/home/data/repo/home_repo_impl.dart';
 import 'package:telefood/featuers/home/presentation/manager/stores_cubit/get_stores_cubit.dart';
@@ -28,6 +31,7 @@ final ShopRepo shopRepo = ShopRepoImpl(apiService: apiService);
 final UserinfoRepo userinfoRepo = UserinfoRepo(apiService);
 final SearchRepo searchRepo = SearchRepo(apiService);
 final CategoryRepo repo = CategoryRepo(apiService);
+final CartRepo cartRepo = CartRepoImpl(apiService: apiService);
 
 List<SingleChildWidget> providers = [
   BlocProvider(
@@ -53,5 +57,8 @@ List<SingleChildWidget> providers = [
   ),
   BlocProvider(
     create: (context) => OrderCubit(shopRepo),
+  ),
+  BlocProvider(
+    create: (context) => CartCubit(cartRepo),
   )
 ];
