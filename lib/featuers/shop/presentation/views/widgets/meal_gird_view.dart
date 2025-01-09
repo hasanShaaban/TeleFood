@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/core/utils/user_token.dart';
 import 'package:telefood/featuers/shop/presentation/manager/shop_cubit/get_products_cubit.dart';
 import 'package:telefood/featuers/shop/presentation/views/widgets/loading_view.dart';
 import 'package:telefood/featuers/shop/presentation/views/widgets/meal_card.dart';
@@ -15,6 +16,7 @@ class MealGridView extends StatelessWidget {
     return BlocBuilder<GetProductsCubit, GetProductsState>(
       builder: (context, state) {
         if (state is GetProductsSuccess && state.response.data != null) {
+          products = state.response.data;
           return SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 23),
