@@ -6,7 +6,6 @@ import 'package:telefood/featuers/cart/data/models/cart_response/cart_response.d
 import 'package:telefood/featuers/cart/presentation/views/cart_view.dart';
 import 'package:telefood/featuers/home/data/models/store_model/store_data.dart';
 import 'package:telefood/featuers/home/presentation/views/home_view.dart';
-import 'package:telefood/featuers/shop/data/models/products_model/products_data.dart';
 import 'package:telefood/featuers/shop/presentation/views/order_view.dart';
 import 'package:telefood/featuers/shop/presentation/views/shop_view.dart';
 import 'package:telefood/featuers/splash/presentation/views/splash_view.dart';
@@ -49,7 +48,7 @@ abstract class AppRouter {
       GoRoute(
         path: kOrderViewRouter,
         builder: (context, state) =>
-            OrderView(data: state.extra as ProductsData),
+            OrderView(extra: state.extra as Map<String, dynamic>),
       ),
       GoRoute(
         path: kCartViewRouter,

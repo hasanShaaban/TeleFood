@@ -19,4 +19,14 @@ class OrderCubit extends Cubit<OrderState> {
       emit(OrderSuccess(response));
     });
   }
+  Future<void> updateOrder({required OrderModel orderModel}) async {
+    emit(OrderLoading());
+    var result = await shopRepo.updateOrder(orderModel);
+
+    result.fold((failuer) {
+      emit(OrderFailuer(failuer.errorMessage));
+    }, (response) {
+      emit(OrderSuccess(response));
+    });
+  }
 }

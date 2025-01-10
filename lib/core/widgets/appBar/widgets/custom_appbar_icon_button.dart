@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/core/utils/user_token.dart';
 
 class CustomAppBarIconButton extends StatelessWidget {
   const CustomAppBarIconButton({
@@ -15,8 +17,14 @@ class CustomAppBarIconButton extends StatelessWidget {
         padding: EdgeInsets.zero,
         onPressed: () {
           if (icon == kBackButton) {
-            GoRouter.of(context).pop();
+            if(target == 'edit'){
+              GoRouter.of(context).push(AppRouter.kShopViewRouter, extra: store!);
+            }else{
+              GoRouter.of(context).pop();
+            }
+            
           } else if (icon == Icons.menu) {
+            
             Scaffold.of(context).openDrawer();
           }
         },

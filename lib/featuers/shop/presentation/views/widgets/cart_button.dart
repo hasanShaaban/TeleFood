@@ -25,7 +25,6 @@ class CartButton extends StatelessWidget {
               if (state is CartSuccess) {
                 GoRouter.of(context)
                     .push(AppRouter.kCartViewRouter, extra: state.response);
-                    
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text(

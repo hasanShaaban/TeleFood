@@ -13,8 +13,9 @@ import 'package:telefood/featuers/shop/presentation/views/widgets/total_price_se
 import 'package:telefood/featuers/shop/presentation/views/widgets/user_order_info.dart';
 
 class OrderViewBody extends StatelessWidget {
-  const OrderViewBody({super.key, required this.data});
+  const OrderViewBody({super.key, required this.data, this.target});
   final ProductsData data;
+  final String? target;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<OrderCubit, OrderState>(
@@ -70,7 +71,7 @@ class OrderViewBody extends StatelessWidget {
             CustomScrollView(
               physics: const BouncingScrollPhysics(),
               slivers: [
-                const MainAppBar(minAppBarHeight: 95,),
+                MainAppBar(minAppBarHeight: 95,target: target),
                 SliverToBoxAdapter(
                   child: Column(
                     children: [
@@ -89,7 +90,7 @@ class OrderViewBody extends StatelessWidget {
                       ),
                       const TotalPriceSection(),
                       const SizedBox(height: 10),
-                      const SubmitButton(),
+                      SubmitButton(target: target),
                       const SizedBox(height: 10),
                     ],
                   ),

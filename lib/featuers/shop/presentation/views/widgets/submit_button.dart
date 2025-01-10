@@ -3,12 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:telefood/core/providers/basket_provider.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/core/utils/user_token.dart';
 import 'package:telefood/featuers/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:telefood/featuers/shop/data/models/order_model/order_model.dart';
 import 'package:telefood/featuers/shop/presentation/manager/order_cubit/order_cubit.dart';
 
 class SubmitButton extends StatelessWidget {
-  const SubmitButton({super.key});
+  const SubmitButton({super.key, this.target});
+  final String? target;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +26,24 @@ class SubmitButton extends StatelessWidget {
             minimumSize: const Size(150, 54),
             backgroundColor: kSecondaryColor),
         onPressed: () {
+          if(provider.id == null || provider.quantity == null || provider.description == null){
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('some fileds is required')));
+          }else if(target == 'edit' && cartId != null){
+            OrderModel orderModel = OrderModel(
+              id: cartId!,
+              quantity: provider.quantity!,
+              description: provider.description!);
+              BlocProvider.of<OrderCubit>(context)
+              .updateOrder(orderModel: orderModel);
+          }
+          else{
           OrderModel orderModel = OrderModel(
               id: provider.id!,
               quantity: provider.quantity!,
               description: provider.description!);
           BlocProvider.of<OrderCubit>(context)
               .postOrder(orderModel: orderModel);
+          }
           BlocProvider.of<CartCubit>(context).getCartInfo();
         },
         child: const Row(

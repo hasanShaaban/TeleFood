@@ -11,6 +11,7 @@ class OrderInfoCard extends StatelessWidget {
   const OrderInfoCard({super.key, required this.data});
 
   
+  
 
   final CartData data;
   @override
@@ -87,7 +88,8 @@ class OrderInfoCard extends StatelessWidget {
                   product = item;
                 }
               }
-              GoRouter.of(context).push(AppRouter.kOrderViewRouter, extra: product);
+              cartId = data.cartId.toString();
+              GoRouter.of(context).push(AppRouter.kOrderViewRouter, extra: {'data' : product, 'target' : 'edit'});
             },
             icon: const Icon(
               Icons.edit_outlined,

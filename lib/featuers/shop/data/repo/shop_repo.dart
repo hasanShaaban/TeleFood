@@ -7,4 +7,6 @@ import 'package:telefood/featuers/shop/data/models/products_model/products_model
 abstract class ShopRepo {
   Future<Either<Failuer, ProductsModel>> getProducts(String storeName);
   Future<Either<Failuer, OrderResponse>> postOrder(OrderModel orderModel);
+  Future<Either<Failuer, OrderResponse>> updateOrder(OrderModel orderModel);
+  
 }
