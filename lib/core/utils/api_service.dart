@@ -51,6 +51,7 @@ class ApiService {
     });
     return response.data;
   }
+
   Future<Map<String, dynamic>> updatOrder(
       {required String endPoints, required OrderModel orderModel}) async {
     var response = await _dio.post('$_baseURL$endPoints', data: {
@@ -66,6 +67,13 @@ class ApiService {
   Future<Map<String, dynamic>> get(
       {required String endPoints, var data}) async {
     var response = await _dio.get('$_baseURL$endPoints', queryParameters: data);
+    return response.data;
+  }
+
+  Future<Map<String, dynamic>> deleteOrder(
+      {required String endPoints, required int cartId}) async {
+    var response = await _dio.delete('$_baseURL$endPoints$cartId?',
+        queryParameters: {'token': token});
     return response.data;
   }
 }

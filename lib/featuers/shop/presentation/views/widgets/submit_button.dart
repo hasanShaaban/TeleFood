@@ -9,9 +9,8 @@ import 'package:telefood/featuers/shop/data/models/order_model/order_model.dart'
 import 'package:telefood/featuers/shop/presentation/manager/order_cubit/order_cubit.dart';
 
 class SubmitButton extends StatelessWidget {
-  const SubmitButton({super.key, this.target});
+  const SubmitButton({super.key, this.target,});
   final String? target;
-
   @override
   Widget build(BuildContext context) {
     BasketProvider provider =

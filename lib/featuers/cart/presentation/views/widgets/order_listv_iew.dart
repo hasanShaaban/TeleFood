@@ -1,8 +1,12 @@
 
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:telefood/bloc_providers.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/featuers/cart/data/models/cart_response/cart_data.dart';
 import 'package:telefood/featuers/cart/data/models/cart_response/cart_response.dart';
+import 'package:telefood/featuers/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:telefood/featuers/cart/presentation/views/widgets/order_info_card.dart';
 
 class OrdersListView extends StatelessWidget {
@@ -22,6 +26,7 @@ class OrdersListView extends StatelessWidget {
           child: Column(
             children: [
               ListView.builder(
+                physics:const NeverScrollableScrollPhysics(),
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   itemCount: cartinfo.data!.length,
@@ -52,9 +57,18 @@ class OrdersListView extends StatelessWidget {
                                   ),
                                   actions: [
                                     TextButton(
-                                        onPressed: () {
+                                        onPressed: () async{
+                                          try{
+                                            await apiService.deleteOrder(endPoints: 'basket/delete/', cartId: cartinfo.data![index].cartId!);
+                                          }catch (e){
+                                            if(e is DioException){
+                                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.message!)));
+                                            }
+                                          }
+                                          BlocProvider.of<CartCubit>(context).getCartInfo();
                                           return Navigator.of(context)
                                               .pop(true);
+                                        
                                         },
                                         child: const Text('Yes')),
                                     TextButton(

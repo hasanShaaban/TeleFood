@@ -22,7 +22,7 @@ class CartButton extends StatelessWidget {
       builder: (context, state) {
         return ElevatedButton(
             onPressed: () {
-              if (state is CartSuccess) {
+              if (state is CartSuccess && state.response.data!.isNotEmpty) {
                 GoRouter.of(context)
                     .push(AppRouter.kCartViewRouter, extra: state.response);
               } else {
@@ -50,7 +50,7 @@ class CartButton extends StatelessWidget {
                   SizedBox(
                       child: state is CartLoading
                           ? const CircularProgressIndicator(strokeWidth: 2)
-                          : state is CartSuccess
+                          : state is CartSuccess && state.response.data!.isNotEmpty
                               ? Text(
                                   state.response.data!.length.toString(),
                                   style: kMvBoli18.copyWith(color: kTextColor),

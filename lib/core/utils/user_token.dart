@@ -6,9 +6,13 @@ String? token;
 String? userImage;
 
 String? userLocation;
-
+String? userPhoneNumber;
 StoreData? store;
 
 List<ProductsData>? products;
 
 String? cartId;
+
+String paymentWay = 'way';
+
+String? accountNum;

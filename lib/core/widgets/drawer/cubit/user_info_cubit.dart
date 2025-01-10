@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:telefood/core/utils/user_token.dart';
 import 'package:telefood/core/widgets/drawer/repo/userInfo_repo.dart';
 import 'package:telefood/core/widgets/drawer/user_model/user_model.dart';
 
@@ -15,6 +16,7 @@ class UserInfoCubit extends Cubit<UserInfoState> {
     result.fold((failuer) {
       emit(UserInfoFailuer(failuer.errorMessage));
     }, (response) {
+      userPhoneNumber = response.data!.mobile!;
       emit(UserInfoSuccess(response));
     });
   }
