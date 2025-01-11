@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class BasketProvider extends ChangeNotifier {
   String? id;
   String? quantity;
-  String? description;
+  String? description = 'no description';
 
   BasketProvider();
 

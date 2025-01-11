@@ -25,13 +25,13 @@ class SubmitButton extends StatelessWidget {
             minimumSize: const Size(150, 54),
             backgroundColor: kSecondaryColor),
         onPressed: () {
-          if(provider.id == null || provider.quantity == null || provider.description == null){
+          if(provider.id == null || provider.quantity == null){
             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('some fileds is required')));
           }else if(target == 'edit' && cartId != null){
             OrderModel orderModel = OrderModel(
               id: cartId!,
               quantity: provider.quantity!,
-              description: provider.description!);
+              description: provider.description.toString());
               BlocProvider.of<OrderCubit>(context)
               .updateOrder(orderModel: orderModel);
           }
@@ -39,7 +39,7 @@ class SubmitButton extends StatelessWidget {
           OrderModel orderModel = OrderModel(
               id: provider.id!,
               quantity: provider.quantity!,
-              description: provider.description!);
+              description: provider.description.toString());
           BlocProvider.of<OrderCubit>(context)
               .postOrder(orderModel: orderModel);
           }

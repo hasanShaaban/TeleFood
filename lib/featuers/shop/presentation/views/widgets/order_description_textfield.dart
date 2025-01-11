@@ -14,6 +14,9 @@ class OrderDescriptionTextFiled extends StatelessWidget {
       height: 80,
       child: TextField(
         onChanged: (value) {
+          if(value == ''){
+            value = 'no description';
+          }
           context.read<BasketProvider>().setDescription(newDescription: value);
         },
         cursorColor: kSecondaryColor,

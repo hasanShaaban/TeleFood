@@ -88,7 +88,7 @@ class OrderViewBody extends StatelessWidget {
                         indent: 55,
                         endIndent: 55,
                       ),
-                      const TotalPriceSection(),
+                      TotalPriceSection(data: data,),
                       const SizedBox(height: 10),
                       SubmitButton(target: target),
                       const SizedBox(height: 10),
