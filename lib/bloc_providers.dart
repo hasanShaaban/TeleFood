@@ -15,6 +15,8 @@ import 'package:telefood/featuers/auth/presentation/manager/signup_cubit/signup_
 import 'package:telefood/featuers/cart/data/repo/cart_repo.dart';
 import 'package:telefood/featuers/cart/data/repo/cart_repo_impl.dart';
 import 'package:telefood/featuers/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:telefood/featuers/favoutite/data/repo/fav_repo_impl.dart';
+import 'package:telefood/featuers/favoutite/presentation/manager/get_favourite_cubit/get_favourite_cubit.dart';
 import 'package:telefood/featuers/home/data/repo/home_repo.dart';
 import 'package:telefood/featuers/home/data/repo/home_repo_impl.dart';
 import 'package:telefood/featuers/home/presentation/manager/stores_cubit/get_stores_cubit.dart';
@@ -32,6 +34,7 @@ final UserinfoRepo userinfoRepo = UserinfoRepo(apiService);
 final SearchRepo searchRepo = SearchRepo(apiService);
 final CategoryRepo repo = CategoryRepo(apiService);
 final CartRepo cartRepo = CartRepoImpl(apiService: apiService);
+final FavRepoImpl favRepo = FavRepoImpl(apiService);
 
 List<SingleChildWidget> providers = [
   BlocProvider(
@@ -60,5 +63,8 @@ List<SingleChildWidget> providers = [
   ),
   BlocProvider(
     create: (context) => CartCubit(cartRepo),
+  ),
+  BlocProvider(
+    create: (context) => GetFavouriteCubit(favRepo)..getFavouiteProds(),
   )
 ];

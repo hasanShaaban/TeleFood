@@ -45,12 +45,6 @@ class RestaurantCardInfo extends StatelessWidget {
                       data.name!,
                       style: kCandara18Bold.copyWith(color: kPrimeryColor),
                     ),
-                    GestureDetector(
-                        onTap: () {},
-                        child: const Icon(
-                          Icons.favorite_border_rounded,
-                          size: 18,
-                        ))
                   ],
                 ),
               ),

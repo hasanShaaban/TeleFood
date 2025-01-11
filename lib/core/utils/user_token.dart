@@ -8,7 +8,7 @@ String? userImage;
 String? userLocation;
 String? userPhoneNumber;
 StoreData? store;
-
+List<ProductsData> favorite = [];
 List<ProductsData>? products;
 
 String? cartId;

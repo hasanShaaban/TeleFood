@@ -76,4 +76,13 @@ class ApiService {
         queryParameters: {'token': token});
     return response.data;
   }
+
+  Future<Map<String, dynamic>> addToFavourite({required String endPoints ,required int productId}) async{
+    var response = await _dio.post('$_baseURL$endPoints', queryParameters: {'product_id': productId, 'token': token});
+    return response.data;
+  }
+  Future<Map<String, dynamic>> deleteFromFavourite({required String endPoints ,required int productId}) async{
+    var response = await _dio.delete('$_baseURL$endPoints$productId?', queryParameters: { 'token': token});
+    return response.data;
+  }
 }
