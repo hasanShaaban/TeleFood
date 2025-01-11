@@ -14,7 +14,6 @@ class ProfileContainer extends StatelessWidget {
     return BlocBuilder<UserInfoCubit, UserInfoState>(
       builder: (context, state) {
         if (state is UserInfoSuccess) {
-          
           return Container(
             width: double.infinity,
             height: 320,

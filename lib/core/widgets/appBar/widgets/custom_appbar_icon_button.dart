@@ -7,7 +7,8 @@ import 'package:telefood/core/utils/user_token.dart';
 class CustomAppBarIconButton extends StatelessWidget {
   const CustomAppBarIconButton({
     super.key,
-    required this.icon, this.target,
+    required this.icon,
+    this.target,
   });
   final String? target;
   final IconData icon;
@@ -17,14 +18,13 @@ class CustomAppBarIconButton extends StatelessWidget {
         padding: EdgeInsets.zero,
         onPressed: () {
           if (icon == kBackButton) {
-            if(target == 'edit'){
-              GoRouter.of(context).push(AppRouter.kShopViewRouter, extra: store!);
-            }else{
+            if (target == 'edit') {
+              GoRouter.of(context)
+                  .push(AppRouter.kShopViewRouter, extra: store!);
+            } else {
               GoRouter.of(context).pop();
             }
-            
           } else if (icon == Icons.menu) {
-            
             Scaffold.of(context).openDrawer();
           }
         },

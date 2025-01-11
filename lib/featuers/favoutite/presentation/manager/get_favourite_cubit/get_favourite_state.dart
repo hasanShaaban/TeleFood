@@ -8,12 +8,14 @@ sealed class GetFavouriteState extends Equatable {
 }
 
 final class GetFavouriteInitial extends GetFavouriteState {}
+
 final class GetFavouriteLoading extends GetFavouriteState {}
+
 final class GetFavouriteSuccess extends GetFavouriteState {
   final ProductsModel response;
   const GetFavouriteSuccess(this.response);
-
 }
+
 final class GetFavouriteFailuer extends GetFavouriteState {
   final String errorMessage;
   const GetFavouriteFailuer(this.errorMessage);

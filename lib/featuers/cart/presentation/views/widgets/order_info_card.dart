@@ -6,12 +6,8 @@ import 'package:telefood/core/utils/user_token.dart';
 import 'package:telefood/featuers/cart/data/models/cart_response/cart_data.dart';
 import 'package:telefood/featuers/shop/data/models/products_model/products_data.dart';
 
-
 class OrderInfoCard extends StatelessWidget {
   const OrderInfoCard({super.key, required this.data});
-
-  
-  
 
   final CartData data;
   @override
@@ -83,13 +79,14 @@ class OrderInfoCard extends StatelessWidget {
         child: IconButton(
             onPressed: () {
               ProductsData? product;
-              for(ProductsData item in products!){
-                if(item.productId! == data.productId){
+              for (ProductsData item in products!) {
+                if (item.productId! == data.productId) {
                   product = item;
                 }
               }
               cartId = data.cartId.toString();
-              GoRouter.of(context).push(AppRouter.kOrderViewRouter, extra: {'data' : product, 'target' : 'edit'});
+              GoRouter.of(context).push(AppRouter.kOrderViewRouter,
+                  extra: {'data': product, 'target': 'edit'});
             },
             icon: const Icon(
               Icons.edit_outlined,

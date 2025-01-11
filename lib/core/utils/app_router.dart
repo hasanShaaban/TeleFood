@@ -45,7 +45,9 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kShopViewRouter,
-        builder: (context, state) => ShopView(data: state.extra as StoreData,),
+        builder: (context, state) => ShopView(
+          data: state.extra as StoreData,
+        ),
       ),
       GoRoute(
         path: kOrderViewRouter,
@@ -54,7 +56,8 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kCartViewRouter,
-        builder: (context, state) => CartView(cartinfo: state.extra as CartResponse),
+        builder: (context, state) =>
+            CartView(cartinfo: state.extra as CartResponse),
       ),
       GoRoute(
         path: kFavouriteRouter,

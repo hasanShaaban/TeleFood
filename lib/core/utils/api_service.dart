@@ -77,12 +77,31 @@ class ApiService {
     return response.data;
   }
 
-  Future<Map<String, dynamic>> addToFavourite({required String endPoints ,required int productId}) async{
-    var response = await _dio.post('$_baseURL$endPoints', queryParameters: {'product_id': productId, 'token': token});
+  Future<Map<String, dynamic>> addToFavourite(
+      {required String endPoints, required int productId}) async {
+    var response = await _dio.post('$_baseURL$endPoints',
+        queryParameters: {'product_id': productId, 'token': token});
     return response.data;
   }
-  Future<Map<String, dynamic>> deleteFromFavourite({required String endPoints ,required int productId}) async{
-    var response = await _dio.delete('$_baseURL$endPoints$productId?', queryParameters: { 'token': token});
+
+  Future<Map<String, dynamic>> deleteFromFavourite(
+      {required String endPoints, required int productId}) async {
+    var response = await _dio.delete('$_baseURL$endPoints$productId?',
+        queryParameters: {'token': token});
+    return response.data;
+  }
+
+  Future<Map<String, dynamic>> confirmOrder(
+      {required String endPoints,
+      required String location,
+      required int payId,
+      int? tips}) async {
+    var response = await _dio.post('$_baseURL$endPoints', queryParameters: {
+      'payId': payId,
+      'location': location,
+      'token': token,
+      'tips': tips
+    });
     return response.data;
   }
 }

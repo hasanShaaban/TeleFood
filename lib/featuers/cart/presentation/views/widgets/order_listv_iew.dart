@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +25,7 @@ class OrdersListView extends StatelessWidget {
           child: Column(
             children: [
               ListView.builder(
-                physics:const NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   itemCount: cartinfo.data!.length,
@@ -34,9 +33,7 @@ class OrdersListView extends StatelessWidget {
                         movementDuration: const Duration(
                             microseconds: 50), // Slightly slower swipe motion
                         dismissThresholds: const {
-                          DismissDirection.startToEnd:
-                              0.7,
-                          
+                          DismissDirection.startToEnd: 0.7,
                         },
                         confirmDismiss: (direction) async {
                           if (direction == DismissDirection.startToEnd) {
@@ -57,18 +54,24 @@ class OrdersListView extends StatelessWidget {
                                   ),
                                   actions: [
                                     TextButton(
-                                        onPressed: () async{
-                                          try{
-                                            await apiService.deleteOrder(endPoints: 'basket/delete/', cartId: cartinfo.data![index].cartId!);
-                                          }catch (e){
-                                            if(e is DioException){
-                                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.message!)));
+                                        onPressed: () async {
+                                          try {
+                                            await apiService.deleteOrder(
+                                                endPoints: 'basket/delete/',
+                                                cartId: cartinfo
+                                                    .data![index].cartId!);
+                                          } catch (e) {
+                                            if (e is DioException) {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(SnackBar(
+                                                      content:
+                                                          Text(e.message!)));
                                             }
                                           }
-                                          BlocProvider.of<CartCubit>(context).getCartInfo();
+                                          BlocProvider.of<CartCubit>(context)
+                                              .getCartInfo();
                                           return Navigator.of(context)
                                               .pop(true);
-                                        
                                         },
                                         child: const Text('Yes')),
                                     TextButton(

@@ -54,7 +54,7 @@ class _DescriptionSectionState extends State<DescriptionSection> {
                     }
                     setState(() {
                       BlocProvider.of<GetFavouriteCubit>(context)
-                        .getFavouiteProds();
+                          .getFavouiteProds();
                     });
                   },
                   icon: Icon(

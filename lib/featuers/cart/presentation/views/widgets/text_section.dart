@@ -20,11 +20,14 @@ class _TextSectionState extends State<TextSection> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Icon(Icons.info, color: kSecondaryColor,),
+        const Icon(
+          Icons.info,
+          color: kSecondaryColor,
+        ),
         Text(
-            'you are about to pay: ${widget.totalPrice} S.P using: ${paymentWay == 'way' ? '-----' : paymentWay} cash\n account number: ${accountNum ?? '------'}, phone number:$userPhoneNumber ',
-            style: kCandara20.copyWith(color: kPrimeryColor, fontSize: 18),
-            ),
+          'you are about to pay: ${widget.totalPrice} S.P using: ${paymentWay == 'way' ? '-----' : paymentWay} cash\n account number: ${accountNum ?? '------'}, phone number:$userPhoneNumber ',
+          style: kCandara20.copyWith(color: kPrimeryColor, fontSize: 18),
+        ),
       ],
     );
   }

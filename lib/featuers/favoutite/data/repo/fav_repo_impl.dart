@@ -9,18 +9,18 @@ class FavRepoImpl {
   final ApiService apiService;
   FavRepoImpl(this.apiService);
 
-  Future<Either<Failuer, ProductsModel>> getFavouiteProds()async{
-    try{
-      var data = await apiService.get(endPoints: 'favorite/index?', data: {'token': token});
+  Future<Either<Failuer, ProductsModel>> getFavouiteProds() async {
+    try {
+      var data = await apiService
+          .get(endPoints: 'favorite/index?', data: {'token': token});
       ProductsModel response = ProductsModel.fromJson(data);
       favorite = response.data!;
       return right(response);
-    }catch (e){
-      if(e is DioException){
+    } catch (e) {
+      if (e is DioException) {
         return left(ServerFailuer.fromDioExceptio(e));
       }
       return left(ServerFailuer(e.toString()));
-
     }
   }
 }

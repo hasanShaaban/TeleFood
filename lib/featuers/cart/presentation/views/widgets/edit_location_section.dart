@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:telefood/core/providers/order_provider.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/core/utils/user_token.dart';
 
@@ -21,7 +23,9 @@ class EditLocationSection extends StatelessWidget {
           width: 170,
           height: 33,
           child: TextField(
-            onChanged: (value) {},
+            onChanged: (value) {
+              context.read<OrderProvider>().setLocation(value);
+            },
             cursorHeight: 18,
             cursorColor: kSecondaryColor,
             textAlignVertical: TextAlignVertical.center,

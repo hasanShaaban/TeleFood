@@ -7,7 +7,8 @@ import 'package:telefood/core/widgets/appBar/widgets/hideable_appbar_items.dart'
 class MainAppBar extends StatelessWidget {
   const MainAppBar({
     super.key,
-    this.minAppBarHeight, this.target,
+    this.minAppBarHeight,
+    this.target,
   });
   final String? target;
   final double? minAppBarHeight;
@@ -41,7 +42,10 @@ class MainAppBar extends StatelessWidget {
               children: [
                 minAppBarHeight == null
                     ? const CustomAppBarIconButton(icon: Icons.menu)
-                    : CustomAppBarIconButton(icon: kBackButton, target: target,),
+                    : CustomAppBarIconButton(
+                        icon: kBackButton,
+                        target: target,
+                      ),
                 const CustomSearchTextField(),
                 const CustomAppBarIconButton(
                     icon: Icons.notifications_none_outlined)

@@ -71,7 +71,7 @@ class OrderViewBody extends StatelessWidget {
             CustomScrollView(
               physics: const BouncingScrollPhysics(),
               slivers: [
-                MainAppBar(minAppBarHeight: 95,target: target),
+                MainAppBar(minAppBarHeight: 95, target: target),
                 SliverToBoxAdapter(
                   child: Column(
                     children: [
@@ -88,7 +88,9 @@ class OrderViewBody extends StatelessWidget {
                         indent: 55,
                         endIndent: 55,
                       ),
-                      TotalPriceSection(data: data,),
+                      TotalPriceSection(
+                        data: data,
+                      ),
                       const SizedBox(height: 10),
                       SubmitButton(target: target),
                       const SizedBox(height: 10),

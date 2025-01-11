@@ -73,12 +73,11 @@ class FavouriteViewBody extends StatelessWidget {
               )
             ],
           );
-        }else if (state is GetFavouriteFailuer){
+        } else if (state is GetFavouriteFailuer) {
           return Center(child: Text(state.errorMessage));
-        }else{
+        } else {
           return const Center(child: CircularProgressIndicator());
         }
-        
       },
     );
   }

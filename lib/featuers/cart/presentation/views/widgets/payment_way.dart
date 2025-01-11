@@ -25,7 +25,6 @@ class _PaymentWayState extends State<PaymentWay> {
             } else {
               setState(() {
                 select = 'syriatel';
-                
               });
             }
             setState(() {

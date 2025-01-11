@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/featuers/cart/presentation/views/widgets/account_number_section.dart';
+import 'package:telefood/featuers/cart/presentation/views/widgets/confirm_button.dart';
 import 'package:telefood/featuers/cart/presentation/views/widgets/edit_location_section.dart';
 import 'package:telefood/featuers/cart/presentation/views/widgets/payment_way.dart';
 import 'package:telefood/featuers/cart/presentation/views/widgets/text_section.dart';
@@ -44,31 +45,11 @@ class PaymentPage extends StatelessWidget {
             const SizedBox(height: 30),
             TextSection(totalPrice: totalPrice),
             const SizedBox(height: 30),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    shadowColor: Colors.black,
-                    elevation: 6,
-                    minimumSize: const Size(150, 54),
-                    backgroundColor: kSecondaryColor),
-                onPressed: () {
-                  
-                },
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text('Confirm', style: kMvBoli20),
-                    SizedBox(
-                      width: 7,
-                    ),
-                    Icon(Icons.payments_outlined)
-                  ],
-                )),
+            const ConfirmButton(),
           ],
         ),
       ),
     );
   }
 }
+

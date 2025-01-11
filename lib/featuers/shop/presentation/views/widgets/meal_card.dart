@@ -10,13 +10,13 @@ class MealCard extends StatelessWidget {
   const MealCard({super.key, required this.data});
 
   final ProductsData data;
-  
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kOrderViewRouter, extra: {'data' :  data, 'target' : null});
+        GoRouter.of(context).push(AppRouter.kOrderViewRouter,
+            extra: {'data': data, 'target': null});
       },
       child: Container(
         decoration: BoxDecoration(

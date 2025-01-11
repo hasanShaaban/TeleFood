@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:telefood/core/providers/order_provider.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/core/widgets/appBar/main_appbar.dart';
 import 'package:telefood/featuers/cart/data/models/cart_response/cart_data.dart';
@@ -23,7 +25,7 @@ class _CartViewBodyState extends State<CartViewBody> {
     for (CartData item in widget.cartinfo.data!) {
       orderPrice = orderPrice + int.parse(item.totalPrice!);
     }
-    int deliveryFee = 1500;
+    int deliveryFee = 12000;
     totalPrice = orderPrice + deliveryFee + tip;
 
     return CustomScrollView(
@@ -68,7 +70,7 @@ class _CartViewBodyState extends State<CartViewBody> {
                     ),
                     Text('Delivery fees: ',
                         style: kMvBoli20.copyWith(color: kPrimeryColor)),
-                    Text('1500 S.P',
+                    Text('$deliveryFee S.P',
                         style: kMvBoli20.copyWith(color: kTextColor)),
                   ],
                 ),
@@ -88,6 +90,7 @@ class _CartViewBodyState extends State<CartViewBody> {
                           setState(() {
                             tip = int.tryParse(value) ?? 0;
                             totalPrice = orderPrice + deliveryFee + tip;
+                            context.read<OrderProvider>().setTips(tip);
                           });
                         },
                         cursorHeight: 18,

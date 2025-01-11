@@ -15,6 +15,7 @@ import 'package:telefood/featuers/auth/presentation/manager/signup_cubit/signup_
 import 'package:telefood/featuers/cart/data/repo/cart_repo.dart';
 import 'package:telefood/featuers/cart/data/repo/cart_repo_impl.dart';
 import 'package:telefood/featuers/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:telefood/featuers/cart/presentation/manager/confirm_order_cubit/confirm_order_cubit.dart';
 import 'package:telefood/featuers/favoutite/data/repo/fav_repo_impl.dart';
 import 'package:telefood/featuers/favoutite/presentation/manager/get_favourite_cubit/get_favourite_cubit.dart';
 import 'package:telefood/featuers/home/data/repo/home_repo.dart';
@@ -66,5 +67,6 @@ List<SingleChildWidget> providers = [
   ),
   BlocProvider(
     create: (context) => GetFavouriteCubit(favRepo)..getFavouiteProds(),
-  )
+  ),
+  BlocProvider(create: (context) => ConfirmOrderCubit(cartRepo),)
 ];

@@ -8,5 +8,4 @@ abstract class ShopRepo {
   Future<Either<Failuer, ProductsModel>> getProducts(String storeName);
   Future<Either<Failuer, OrderResponse>> postOrder(OrderModel orderModel);
   Future<Either<Failuer, OrderResponse>> updateOrder(OrderModel orderModel);
-  
 }

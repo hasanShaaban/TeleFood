@@ -23,7 +23,6 @@ class QuantitySection extends StatelessWidget {
                   .read<BasketProvider>()
                   .setId(newId: data.productId!.toString());
             },
-            
             cursorHeight: 18,
             cursorColor: kSecondaryColor,
             textAlignVertical: TextAlignVertical.center,

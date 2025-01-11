@@ -40,9 +40,10 @@ class ShopRepoImpl extends ShopRepo {
       return left(ServerFailuer(e.toString()));
     }
   }
-  
+
   @override
-  Future<Either<Failuer, OrderResponse>> updateOrder(OrderModel orderModel) async{
+  Future<Either<Failuer, OrderResponse>> updateOrder(
+      OrderModel orderModel) async {
     try {
       var data = await apiService.updatOrder(
           endPoints: 'basket/update?', orderModel: orderModel);
