@@ -31,10 +31,10 @@ class CartRepoImpl extends CartRepo {
     try {
       var data = await apiService.confirmOrder(
           endPoints: 'checkout?', location: location, payId: id, tips: tips);
-          ConfirmOrderResponse response = ConfirmOrderResponse.fromJson(data);
-          return right(response);
+      ConfirmOrderResponse response = ConfirmOrderResponse.fromJson(data);
+      return right(response);
     } catch (e) {
-      if(e is DioException){
+      if (e is DioException) {
         return left(ServerFailuer.fromDioExceptio(e));
       }
       return left(ServerFailuer(e.toString()));

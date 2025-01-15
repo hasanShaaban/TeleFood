@@ -68,5 +68,7 @@ List<SingleChildWidget> providers = [
   BlocProvider(
     create: (context) => GetFavouriteCubit(favRepo)..getFavouiteProds(),
   ),
-  BlocProvider(create: (context) => ConfirmOrderCubit(cartRepo),)
+  BlocProvider(
+    create: (context) => ConfirmOrderCubit(cartRepo),
+  )
 ];

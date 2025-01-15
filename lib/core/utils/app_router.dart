@@ -4,6 +4,7 @@ import 'package:telefood/featuers/auth/presentation/views/signup_confermming_vie
 import 'package:telefood/featuers/auth/presentation/views/signup_view.dart';
 import 'package:telefood/featuers/cart/data/models/cart_response/cart_response.dart';
 import 'package:telefood/featuers/cart/presentation/views/cart_view.dart';
+import 'package:telefood/featuers/driver/presentation/views/driver_view.dart';
 import 'package:telefood/featuers/favoutite/presentation/views/favourite_view.dart';
 import 'package:telefood/featuers/home/data/models/store_model/store_data.dart';
 import 'package:telefood/featuers/home/presentation/views/home_view.dart';
@@ -21,6 +22,7 @@ abstract class AppRouter {
   static const kOrderViewRouter = '/OrderView';
   static const kCartViewRouter = '/CartView';
   static const kFavouriteRouter = '/FavouriteView';
+  static const kDriverViewRouter = '/DriverView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -62,6 +64,10 @@ abstract class AppRouter {
       GoRoute(
         path: kFavouriteRouter,
         builder: (context, state) => const FavouriteView(),
+      ),
+      GoRoute(
+        path: kDriverViewRouter,
+        builder: (context, state) => const DriverView(),
       ),
     ],
   );

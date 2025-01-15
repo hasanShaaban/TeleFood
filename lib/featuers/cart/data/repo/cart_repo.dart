@@ -5,5 +5,6 @@ import 'package:telefood/featuers/cart/data/models/confirm_order_response.dart';
 
 abstract class CartRepo {
   Future<Either<Failuer, CartResponse>> getCartInfo();
-  Future<Either<Failuer, ConfirmOrderResponse>> confirmOrder({ int? id, required String location, int? tips});
+  Future<Either<Failuer, ConfirmOrderResponse>> confirmOrder(
+      {int? id, required String location, int? tips});
 }

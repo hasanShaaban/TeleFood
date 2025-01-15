@@ -133,7 +133,7 @@ class OrdersListView extends StatelessWidget {
           }
         },
         listener: (BuildContext context, CartState state) {
-          if(state is CartSuccess && state.response.data!.isEmpty){
+          if (state is CartSuccess && state.response.data!.isEmpty) {
             GoRouter.of(context).pop();
           }
         },

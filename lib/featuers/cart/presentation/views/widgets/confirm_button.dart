@@ -9,9 +9,10 @@ import 'package:telefood/featuers/cart/presentation/manager/confirm_order_cubit/
 
 class ConfirmButton extends StatefulWidget {
   const ConfirmButton({
-    super.key, required this.cartinfo, 
+    super.key,
+    required this.cartinfo,
   });
-final CartResponse cartinfo;
+  final CartResponse cartinfo;
 
   @override
   State<ConfirmButton> createState() => _ConfirmButtonState();
@@ -34,10 +35,11 @@ class _ConfirmButtonState extends State<ConfirmButton> {
           setState(() {
             widget.cartinfo.data!.clear();
           });
-          String location = provider.location?? userLocation!;
+          String location = provider.location ?? userLocation!;
           int? tips = provider.tips;
           int? id = provider.payId;
-          BlocProvider.of<ConfirmOrderCubit>(context).confirmOrder(location: location, id: id, tips: tips);
+          BlocProvider.of<ConfirmOrderCubit>(context)
+              .confirmOrder(location: location, id: id, tips: tips);
           context.read<OrderProvider>().setPayId(null);
           Navigator.pop(context);
         },

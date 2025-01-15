@@ -7,7 +7,8 @@ import 'package:telefood/featuers/cart/presentation/views/widgets/payment_page.d
 class SubmitButton extends StatelessWidget {
   const SubmitButton({
     super.key,
-    required this.totalPrice, required this.cartinfo,
+    required this.totalPrice,
+    required this.cartinfo,
   });
 
   final int totalPrice;
@@ -36,7 +37,8 @@ class SubmitButton extends StatelessWidget {
                 ),
               ),
               builder: (BuildContext context) {
-                return PaymentPage(cartinfo: cartinfo,
+                return PaymentPage(
+                  cartinfo: cartinfo,
                   totalPrice: totalPrice.toString(),
                 );
               },

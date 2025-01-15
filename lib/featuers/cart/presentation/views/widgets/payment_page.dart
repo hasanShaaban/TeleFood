@@ -10,7 +10,8 @@ import 'package:telefood/featuers/cart/presentation/views/widgets/text_section.d
 class PaymentPage extends StatelessWidget {
   const PaymentPage({
     super.key,
-    required this.totalPrice, required this.cartinfo,
+    required this.totalPrice,
+    required this.cartinfo,
   });
   final CartResponse cartinfo;
 
@@ -47,11 +48,12 @@ class PaymentPage extends StatelessWidget {
             const SizedBox(height: 30),
             TextSection(totalPrice: totalPrice),
             const SizedBox(height: 30),
-            ConfirmButton(cartinfo: cartinfo,),
+            ConfirmButton(
+              cartinfo: cartinfo,
+            ),
           ],
         ),
       ),
     );
   }
 }
-

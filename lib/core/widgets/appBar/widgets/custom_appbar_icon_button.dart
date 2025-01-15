@@ -26,6 +26,8 @@ class CustomAppBarIconButton extends StatelessWidget {
             }
           } else if (icon == Icons.menu) {
             Scaffold.of(context).openDrawer();
+          } else if (icon == Icons.delivery_dining_outlined) {
+            GoRouter.of(context).push(AppRouter.kDriverViewRouter);
           }
         },
         icon: Icon(

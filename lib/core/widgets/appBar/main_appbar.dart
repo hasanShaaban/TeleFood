@@ -48,7 +48,7 @@ class MainAppBar extends StatelessWidget {
                       ),
                 const CustomSearchTextField(),
                 const CustomAppBarIconButton(
-                    icon: Icons.notifications_none_outlined)
+                    icon: Icons.delivery_dining_outlined)
               ],
             ),
           ),

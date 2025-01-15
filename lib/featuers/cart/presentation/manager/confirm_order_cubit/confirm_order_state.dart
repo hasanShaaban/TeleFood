@@ -8,13 +8,15 @@ abstract class ConfirmOrderState extends Equatable {
 }
 
 final class ConfirmOrderInitial extends ConfirmOrderState {}
+
 final class ConfirmOrderLoading extends ConfirmOrderState {}
+
 final class ConfirmOrderSuccess extends ConfirmOrderState {
   final ConfirmOrderResponse response;
   const ConfirmOrderSuccess(this.response);
 }
+
 final class ConfirmOrderFailuer extends ConfirmOrderState {
   final String errorMessage;
   const ConfirmOrderFailuer(this.errorMessage);
 }
-

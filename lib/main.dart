@@ -2,13 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:telefood/bloc_providers.dart';
+import 'package:telefood/core/providers/linear_timer_manager.dart';
 import 'package:telefood/core/providers/order_provider.dart';
 import 'package:telefood/core/providers/signup_info_provider.dart';
 import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (_) => LinearTimerManager(
+        durationMilliseconds: 30000, // Example duration
+        onTimerFinish: () {
+          print("Timer Finished!");
+        },
+      ),
+      child:const MyApp(),
+    ),);
 }
 
 class MyApp extends StatelessWidget {
