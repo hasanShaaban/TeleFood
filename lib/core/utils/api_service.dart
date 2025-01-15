@@ -94,7 +94,7 @@ class ApiService {
   Future<Map<String, dynamic>> confirmOrder(
       {required String endPoints,
       required String location,
-      required int payId,
+      int? payId,
       int? tips}) async {
     var response = await _dio.post('$_baseURL$endPoints', queryParameters: {
       'payId': payId,

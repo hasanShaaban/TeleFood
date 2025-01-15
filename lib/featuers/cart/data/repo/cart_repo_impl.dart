@@ -27,7 +27,7 @@ class CartRepoImpl extends CartRepo {
 
   @override
   Future<Either<Failuer, ConfirmOrderResponse>> confirmOrder(
-      {required int id, required String location, int? tips}) async {
+      {int? id, required String location, int? tips}) async {
     try {
       var data = await apiService.confirmOrder(
           endPoints: 'checkout?', location: location, payId: id, tips: tips);

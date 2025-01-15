@@ -7,7 +7,7 @@ class OrderProvider extends ChangeNotifier{
 
   OrderProvider();
 
-  void setPayId(int newPayId) async{
+  void setPayId(int? newPayId) async{
     payId = newPayId;
     notifyListeners();
   }

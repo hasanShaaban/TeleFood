@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telefood/core/utils/constant.dart';
+import 'package:telefood/featuers/cart/data/models/cart_response/cart_response.dart';
 import 'package:telefood/featuers/cart/presentation/views/widgets/account_number_section.dart';
 import 'package:telefood/featuers/cart/presentation/views/widgets/confirm_button.dart';
 import 'package:telefood/featuers/cart/presentation/views/widgets/edit_location_section.dart';
@@ -9,8 +10,9 @@ import 'package:telefood/featuers/cart/presentation/views/widgets/text_section.d
 class PaymentPage extends StatelessWidget {
   const PaymentPage({
     super.key,
-    required this.totalPrice,
+    required this.totalPrice, required this.cartinfo,
   });
+  final CartResponse cartinfo;
 
   final String totalPrice;
   @override
@@ -45,7 +47,7 @@ class PaymentPage extends StatelessWidget {
             const SizedBox(height: 30),
             TextSection(totalPrice: totalPrice),
             const SizedBox(height: 30),
-            const ConfirmButton(),
+            ConfirmButton(cartinfo: cartinfo,),
           ],
         ),
       ),

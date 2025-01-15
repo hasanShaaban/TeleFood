@@ -9,7 +9,7 @@ part 'confirm_order_state.dart';
 class ConfirmOrderCubit extends Cubit<ConfirmOrderState> {
   ConfirmOrderCubit(this.cartRepo) : super(ConfirmOrderInitial());
   final CartRepo cartRepo;
-  Future<void> confirmOrder({required String location, required int id, int? tips}) async{
+  Future<void> confirmOrder({required String location,int? id, int? tips}) async{
     emit(ConfirmOrderLoading());
     var result = await cartRepo.confirmOrder(id: id, location: location, tips: tips);
     result.fold((failuer){

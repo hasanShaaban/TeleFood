@@ -19,7 +19,8 @@ class AccountNumberSection extends StatelessWidget {
               height: 33,
               child: TextField(
                 onChanged: (value) {
-                  context.read<OrderProvider>().setPayId(int.parse(value));
+                  
+                  context.read<OrderProvider>().setPayId(int.tryParse(value));
                 },
                 cursorHeight: 18,
                 cursorColor: kSecondaryColor,
