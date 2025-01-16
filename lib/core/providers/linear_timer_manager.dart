@@ -17,12 +17,13 @@ class LinearTimerManager extends ChangeNotifier {
   }) {
     millisecondsRemaining = durationMilliseconds;
     barWidth = 1.0;
-    startTimer();
   }
+  
 
   bool get timerFinished => _timerFinished;
 
   void startTimer() {
+    _timerFinished = false;
     _timer = Timer.periodic(
       Duration(milliseconds: updateInterval),
       (timer) {

@@ -16,6 +16,8 @@ import 'package:telefood/featuers/cart/data/repo/cart_repo.dart';
 import 'package:telefood/featuers/cart/data/repo/cart_repo_impl.dart';
 import 'package:telefood/featuers/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:telefood/featuers/cart/presentation/manager/confirm_order_cubit/confirm_order_cubit.dart';
+import 'package:telefood/featuers/driver/data/repo/driver_repo_impl.dart';
+import 'package:telefood/featuers/driver/presentation/manager/driver_orders_cubit/driver_orders_cubit.dart';
 import 'package:telefood/featuers/favoutite/data/repo/fav_repo_impl.dart';
 import 'package:telefood/featuers/favoutite/presentation/manager/get_favourite_cubit/get_favourite_cubit.dart';
 import 'package:telefood/featuers/home/data/repo/home_repo.dart';
@@ -36,6 +38,7 @@ final SearchRepo searchRepo = SearchRepo(apiService);
 final CategoryRepo repo = CategoryRepo(apiService);
 final CartRepo cartRepo = CartRepoImpl(apiService: apiService);
 final FavRepoImpl favRepo = FavRepoImpl(apiService);
+final DriverRepoImpl driverRepoImpl = DriverRepoImpl(apiService);
 
 List<SingleChildWidget> providers = [
   BlocProvider(
@@ -70,5 +73,6 @@ List<SingleChildWidget> providers = [
   ),
   BlocProvider(
     create: (context) => ConfirmOrderCubit(cartRepo),
-  )
+  ),
+  BlocProvider(create: (context) => DriverOrdersCubit(driverRepoImpl)..getDriverOrders())
 ];

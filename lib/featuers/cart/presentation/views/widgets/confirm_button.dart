@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:telefood/core/providers/linear_timer_manager.dart';
 import 'package:telefood/core/providers/order_provider.dart';
 import 'package:telefood/core/utils/constant.dart';
 import 'package:telefood/core/utils/user_token.dart';
 import 'package:telefood/featuers/cart/data/models/cart_response/cart_response.dart';
 import 'package:telefood/featuers/cart/presentation/manager/confirm_order_cubit/confirm_order_cubit.dart';
+import 'package:telefood/featuers/driver/presentation/manager/driver_orders_cubit/driver_orders_cubit.dart';
 
 class ConfirmButton extends StatefulWidget {
   const ConfirmButton({
@@ -40,6 +42,8 @@ class _ConfirmButtonState extends State<ConfirmButton> {
           int? id = provider.payId;
           BlocProvider.of<ConfirmOrderCubit>(context)
               .confirmOrder(location: location, id: id, tips: tips);
+          BlocProvider.of<DriverOrdersCubit>(context).getDriverOrders();
+          context.read<LinearTimerManager>().startTimer();
           context.read<OrderProvider>().setPayId(null);
           Navigator.pop(context);
         },

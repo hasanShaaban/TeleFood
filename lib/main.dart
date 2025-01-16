@@ -13,7 +13,6 @@ void main() {
       create: (_) => LinearTimerManager(
         durationMilliseconds: 30000, // Example duration
         onTimerFinish: () {
-          print("Timer Finished!");
         },
       ),
       child:const MyApp(),

@@ -70,6 +70,11 @@ class ApiService {
     return response.data;
   }
 
+  Future<void> get2(
+      {required String endPoints, var data}) async {
+    await _dio.get('$_baseURL$endPoints', queryParameters: data);
+  }
+
   Future<Map<String, dynamic>> deleteOrder(
       {required String endPoints, required int cartId}) async {
     var response = await _dio.delete('$_baseURL$endPoints$cartId?',

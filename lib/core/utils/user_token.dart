@@ -16,3 +16,6 @@ String? cartId;
 String paymentWay = 'way';
 
 String? accountNum;
+
+
+bool isButtonDisabled = false;
