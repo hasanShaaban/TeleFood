@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
+import 'package:telefood/bloc_providers.dart';
+import 'package:telefood/core/providers/linear_timer_manager.dart';
+import 'package:telefood/core/providers/order_provider.dart';
+import 'package:telefood/core/providers/signup_info_provider.dart';
 import 'package:telefood/core/utils/app_router.dart';
 import 'package:telefood/core/utils/constant.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (_) => LinearTimerManager(
+        durationMilliseconds: 30000, // Example duration
+        onTimerFinish: () {
+        },
+      ),
+      child:const MyApp(),
+    ),);
 }
 
 class MyApp extends StatelessWidget {
@@ -11,10 +24,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: AppRouter.router,
-      theme: ThemeData(scaffoldBackgroundColor: kScaffoldColor),
+    return MultiBlocProvider(
+      providers: providers,
+      child: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => SignupInfoProvider()),
+          ChangeNotifierProvider(create: (context) => OrderProvider()),
+        ],
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          routerConfig: AppRouter.router,
+          theme: ThemeData(
+              scaffoldBackgroundColor: kWhiteColor, useMaterial3: false),
+        ),
+      ),
     );
   }
 }
